@@ -6,25 +6,28 @@
     box-sizing: border-box;
 }
 body{
-    margin: 0;    
+    margin: 0;
+    background-color: #DDDDDA;    
 }
 nav{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Playfair Display SC', serif;
     height: 80px;
     width: 100%;
-    background-color: #4F80E2;
-
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 label.logo{
     font-size: 35px;
-    padding: 0px 100px;
-    color: white;
+    padding-left: 60px;
+    color: #4A707A;
     line-height: 80px;
     font-weight: bold;
 }
 nav ul{
-    float: right;
-    margin-right: 20px;
+    float: left;
 }
 nav ul li{
     display: inline-block;
@@ -32,44 +35,85 @@ nav ul li{
     margin: 0 5px;
 }
 nav ul li a{
-    color: white;
+    
+    color: #4A707A;
     font-size: 17px;
     padding:30px 40px;
     border-radius: 3px;
     text-transform: uppercase;
 }
+.hello_name{
+    color: #4A707A;
+    font-size: 17px;
+    background-color:#E2CFC9;
+    padding: 0.5rem 1rem; 
+    margin: 0px 60px; 
+    border: none;
+    outline: none;
+    border-radius: 20px;
+    font-weight: bold;
+    float: left;
+  
+}
 a.active, a:hover{
-    background-color: #15CDCA;
-    transition:2s;
+    color:#37545c ;
+}
+ul li a:hover, a:active{
+    text-decoration: underline;
 }
 .checkbtn{
-    font-size: 30px;
-    color:white;
+    font-size: 20px;
+    color:#4A707A;
     float: right;
     line-height: 80px;
     margin-right: 40px;
-    cursor: pointer;
     display:none;
+    cursor: pointer;
 }
 #check{
     display:none;
-
 }
-@media (max-width: 952px){
-    labe.logo{
-        font-size: 30px;
-        padding-left: 50px;
-    }
-    nav ul li a{
-        font-size: 16px;
-
-    }
+.dropdown_menu{
+    display: none;
+    height: 0;
+    position: absolute;
+    right: 2rem;
+    top: 60px;
+    width: 200px;
+    background: #C2C8C5;
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-@media (max-width:858px){
+.dropdown_menu.open{
+    height: 180px;
+}
+.dropdown_menu.open a:hover, a:active{
+    color:#37545c ;
+    text-decoration: underline;
+}
+.dropdown_menu li{
+    padding: 0.7rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.dropdown_menu li a{
+    color: #4A707A;
+}
+
+@media (max-width:992px){
     .checkbtn{
         display:block;
     }
-    ul{
+    nav ul li a, .hello_name{
+        display: none;    
+    }
+    .dropdown_menu{
+        display: block;
+    }
+    /* ul{
         position:fixed;
         width:100%;
         height:100vh;
@@ -88,10 +132,23 @@ a.active, a:hover{
        font-size: 20px;
     }
     a:hover,a.active{
-        background: none;
-        color:#15CDCA;
-    }
-    #check:checked ~ ul{
+        color:#37545c ;
+        text-decoration: underline;
+    } */
+    /* #check:checked ~ ul{
         left: 0
+    } */
+
+}
+@media (max-width: 576px){
+    .logo {
+        padding-bottom: 25px; 
+    }
+    .checkbtn{
+        padding-bottom: 25px;
+    }
+    .dropdown_menu {
+        left: 2rem;
+        width:unset;
     }
 }
