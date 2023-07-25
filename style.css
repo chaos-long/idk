@@ -9,7 +9,7 @@ body{
     margin: 0;
     background-color: #DDDDDA;    
 }
-/* navigation bar siêu cấp simple( xạo tró, canh cái list điều hướng lòi con mắt mà vẫn bị méo) */
+/* navigation bar */
 nav{
     font-family: 'Playfair Display SC', serif;
     height: 80px;
@@ -105,7 +105,7 @@ ul li a:hover, a:active{
 .dropdown_menu li a{
     color: #4A707A;
 }
-/* h là cái khung chat cho Tí tò mò (xì trum cũng bị tiểu đường bth nha)*/
+/* chatbot----------------------------------------------------------------------------*/
 .chatbot{
     transform: scale(0.5);
     opacity: 0;
