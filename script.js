@@ -46,3 +46,27 @@ chatInput.addEventListener("input",() => {
 chatbotClosebtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 sendChatBtn.addEventListener("click", handleChat)
+const checkbtn = document.querySelector('.checkbtn')
+const checkbtnIcon = document.querySelector('.checkbtn i')
+const dropDownMenu = document.querySelector('.dropdown_menu')
+
+
+
+
+
+checkbtn.onclick = function () {
+    dropDownMenu.classList.toggle('open')
+    const isOpen = dropDownMenu.classList.contains('open')
+    checkbtnIcon.classList = isOpen
+    ? 'fa-solid fa-xmark'
+    : 'fa-solid fa-bars-staggered'
+}
+
+
+// function welcomeFunc() {
+//     let person = prompt("Please enter your name", "Tí điệu");
+//     if (person != null) {
+//       document.getElementById("name").innerHTML =
+//       "Hello " + person + "! How are you today?";
+//     }
+//   }
