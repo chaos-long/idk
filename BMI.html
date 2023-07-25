@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html dir="ltr">
+    <head>
+        <meta charset ="utf-8">
+        <title>Health web</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <nav>
+           <label class="logo"><b>NutriXcel</b></label> 
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Menu.html">Menu</a></li>
+                <li><a href="BMI.html" >BMI</a></li>
+                <li><a href="More.html" >More</a></li>
+            </ul>
+            <a href="#" class="hello_name">Hello</a>
+            <input type="checkbox" id="check">
+            <div class="checkbtn">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </div>
+             <div class="dropdown_menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="Menu.html">Menu</a></li>
+                <li><a href="BMI.html" >BMI</a></li>
+                <li><a href="More.html" >More</a></li>    
+            </div>
+        </nav>
+        <script>
+            const checkbtn = document.querySelector('.checkbtn')
+            const checkbtnIcon = document.querySelector('.checkbtn i')
+            const dropDownMenu = document.querySelector('.dropdown_menu')
+
+            checkbtn.onclick = function () {
+                dropDownMenu.classList.toggle('open')
+                const isOpen = dropDownMenu.classList.contains('open')
+                checkbtnIcon.classList = isOpen
+                ? 'fa-solid fa-xmark'
+                : 'fa-solid fa-bars-staggered'
+            }
+        </script>
+        <!-- chatbox not chatbot -->
+        <div>
+        <button class="chatbot-toggler">
+            <span class="material-symbols-outlined" style="font-size: 25px;"><i class="fa-solid fa-envelope"></i></span>
+            <span class="material-symbols-outlined" style="font-size: 20px;"><i class="fa-solid fa-xmark"></i></span>
+        </button>
+        <div class="chatbot">
+            <header>
+                <h2>tí hay hỏi</h2>
+                <span class="close-btn material-symbols-outlined"><i class="fa-solid fa-xmark"></i></span>
+            </header>   
+            <ul class="chatbox">
+                <li class="chat incoming">
+                    <span class="material-symbols-outlined"><i class="fa-solid fa-robot"></i></span>
+                    <p>Hello ní 🐳 <br>How can i help you?</p>
+                </li>
+            </ul>
+            <div class="chat-input">
+                <textarea placeholder="Enter a message..." required></textarea>
+                <span id="send-btn" class="material-symbols-outlined"><i class="fa-solid fa-paper-plane"></i></span>
+                
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
