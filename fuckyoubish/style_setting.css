@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+body{
+    display:flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: linear-gradient(135deg,#DDDDDA,#4A707A);
+}
+.container{
+    max-width: 800px;
+    width: 100%;
+    color: #fff;
+    font-family: 'Zilla Slab', sans-serif;
+    padding: 25px 30px;
+    height: 600px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(9.1px);
+    -webkit-backdrop-filter: blur(9.1px);
+    /* border: 1px solid rgba(255, 255, 255, 0.45); */
+}
+.container .title{
+    font-size: 25px;
+    font-weight: 500;
+    position: relative;
+    font-family: 'Playfair Display SC', serif;
+}
+.container .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height:  3px;
+    width: 300px;
+    background: linear-gradient(135deg,#4A707A,#ccc, transparent);
+}
+.container form .user-details{
+    display: flex;
+    font-size: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 15px 0 12px 0;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 45%;
+}
+.user-details .input-box .details{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user-details .input-box input{
+    height: 45px;
+    width: 100%;
+    margin: 5px 0px;
+    border-radius: 5px;
+    outline: none;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    padding-left: 15px;
+    border-bottom-width: 3px;
+    transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+    border-color: #4A707A;
+}
+form .gender-details .gender-title, .sickness-title, .job-title{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .gender-details .category{
+    width: 60%;
+    display: flex;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+form .sickness-details .categoryA{
+    width: 100%;
+    display: flex;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+form .job-details .categoryB{
+    width: 90%;
+    display: flex;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+.gender-details .category label{
+    display: flex;
+    align-items: center;
+}
+.gender-details .category .dot{
+    height: 18px;
+    width: 18px;
+    background:#fff;
+    transition: all 0.2s ease;
+    border: 5px solid transparent;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.sickness-details .categoryA label{
+    display: flex;
+    align-items: center;
+}
+.sickness-details .categoryA .dot{
+    height: 18px;
+    width: 18px;
+    background: #fff;
+    transition: all 0.2s ease;
+    border: 5px solid transparent;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.job-details .categoryB label{
+    display: flex;
+    align-items: center;
+}
+.job-details .categoryB .dot{
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: #fff;
+    transition: all 0.2s ease;
+    border: 5px solid transparent;
+    margin-right: 10px;
+}
+#dot-1:checked ~.category label .one,
+#dot-2:checked ~.category label .two{
+    border-color: #4A707A;
+    background: #DDDDDA
+}
+#dot-1a:checked ~ .categoryA label .oneA,
+#dot-2a:checked ~ .categoryA label .twoA,
+#dot-3a:checked ~ .categoryA label .threeA,
+#dot-4a:checked ~ .categoryA label  .fourA{
+    border-color: #4A707A;
+    background: #DDDDDA
+}
+#dot-1b:checked ~.categoryB label .oneB,
+#dot-2b:checked ~.categoryB label .twoB,
+#dot-3b:checked ~.categoryB label .threeB{
+    border-color: #4A707A;
+    background: #DDDDDA
+}
+form input[type="radio"]{
+    display: none;
+}
+.button {
+    height: 45px;
+    margin: 45px 0;
+}
+.button input{
+    height: 100%;
+    width: 100%;
+    outline-color: none;
+    font-family: "Playfair Display", sans-serif;
+    font-size: 20px;
+    border: 0;
+    border-radius: 10px;
+    background-color: #4A707A;
+    color:#fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+    box-shadow: -10px 10px 30px 0 rgba(79, 95, 89, 0.918),
+    0 10px 10px -48px rgba(180, 193, 184, 0.582);
+    /* background: linear-gradient(135deg,#94B0B7,#C2C8C5); */
+}
+.button  input:hover{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+    transition:all 0.3s ease;
+}
+@media (max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+    form .user-details .input-box{
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    
+    form .gender-details .category{
+        width: 100%;
+    }
+    form .sickness-details .categoryA{
+        height: auto;
+        width: 100%;
+    }
+    form .job-details .categoryB{
+        height: auto;
+        width: 100%;
+        
+    }
+    .container form .user-details{
+        max-height: 300px;
+        overflow-y: scroll;
+    }
+    .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+}

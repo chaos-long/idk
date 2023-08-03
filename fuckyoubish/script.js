@@ -3,8 +3,16 @@ const sendChatBtn = document.querySelector(".chat-input span");
 const chatbox = document.querySelector(".chatbox");
 const chatbotToggler = document.querySelector(".chatbot-toggler");
 const chatbotClosebtn = document.querySelector(".close-btn");
+
 let userMessage;
+const API_KEY = "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";
+
 const inputInitHeight = chatInput.scrollHeight;
+
+const loadDataFromLocalstorage = () => {
+    chatbox.innerHTML = localStorage.getItem("all-chats");
+}
+
 const  createChatLi = (message, className) => {
     const chatLi = document.createElement("li");
     chatLi.classList.add("chat", className);
@@ -15,8 +23,29 @@ const  createChatLi = (message, className) => {
 }
 // chỗ này nè
 const generateResponse = (incomingChatLi) =>{
+    const API_URL = "https://api.openai.com/v1/chat/completions";
     const messageElement = incomingChatLi.querySelector("p");
-    // .finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
+
+    const requestOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${API_KEY}` 
+        },
+        body: JSON.stringify({
+            "model": "gpt-3.5-turbo",
+            "messages": [{"role": "user", "content": userMessage}]
+        })
+    }
+
+    fetch(API_URL, requestOptions).then(res => res.json()).then(data => {
+        messageElement.textContent = data.choices[0].message.content;
+    }).catch((error) => {
+        messageElement.classList.add("error");
+        messageElement.textContent = "Oops! đã xảy ra lỗi. Hãy thử lại.";
+    }).finally(() => chatbox.scrollTo(0, chatbox.scrollHeight));
+
+    localStorage.setItem("all-chats", chatbox.innerHTML);
 }
 const handleChat = () => {
     userMessage =   chatInput.value.trim();
@@ -24,10 +53,11 @@ const handleChat = () => {
     chatInput.value = "";
     chatInput.style.height = `${inputInitHeight}px`;
     chatbox.appendChild(createChatLi(userMessage, "outgoing"));
-    chatbox.scrollTo(0, chat.scrollHeight);
+    chatbox.scrollTo(0, chatbox.scrollHeight);
     setTimeout(() => {
-        const incomingChatLi = createChatLi("Thinking...", "incoming");
+        const incomingChatLi = createChatLi("Thinking...", "incoming")
         chatbox.appendChild(incomingChatLi);
+        chatbox.scrollTo(0, chatbox.scrollHeight);
         generateResponse(incomingChatLi);
     },600);
 }
@@ -36,23 +66,23 @@ chatInput.addEventListener("input",() => {
     chatInput.style.height = `${chatInput.scrollHeight}px`;
 
  })
- chatInput.addEventListener("keydown",(e) => {
+ chatInput.addEventListener("keydown    ",(e) => {
     if(e.key ==="Enter" && !e.shiftKey && window.innerWidth>800){
         e.preventDefault();
         handleChat();
     }
 
  })
+
 chatbotClosebtn.addEventListener("click", () => document.body.classList.remove("show-chatbot"));
 chatbotToggler.addEventListener("click", () => document.body.classList.toggle("show-chatbot"));
 sendChatBtn.addEventListener("click", handleChat)
+
+
+// dropdown menu
 const checkbtn = document.querySelector('.checkbtn')
 const checkbtnIcon = document.querySelector('.checkbtn i')
 const dropDownMenu = document.querySelector('.dropdown_menu')
-
-
-
-
 
 checkbtn.onclick = function () {
     dropDownMenu.classList.toggle('open')
@@ -62,11 +92,28 @@ checkbtn.onclick = function () {
     : 'fa-solid fa-bars-staggered'
 }
 
+// setting page
 
-// function welcomeFunc() {
-//     let person = prompt("Please enter your name", "Tí điệu");
-//     if (person != null) {
-//       document.getElementById("name").innerHTML =
-//       "Hello " + person + "! How are you today?";
+
+
+const inp_name = document.querySelector(".inp_name");
+const inp_ages = document.querySelector(".inp_ages");
+const inp_weight = document.querySelector(".inp_weight");
+const inp_height = document.querySelector(".inp_height");
+
+
+
+    
+
+
+    let Gender = document.getElementById('gender_radio');
+    radioNodeList = Gender.elements['gender'];
+    let checkValue = radioNodeList.value;
+
+
+//     document.getElementById(sub_btn).onclick = function(){
+//         inp_name.innerHTML =  document.getElementById('inp_name');
+// inp_ages.innerHTML =  document.getElementById('inp_ages');
+// inp_weight.innerHTML =  document.getElementById('inp_weight');
+// inp_height.innerHTML =  document.getElementById('inp_height');
 //     }
-//   }

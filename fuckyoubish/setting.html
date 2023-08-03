@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html dir="ltr">
+    <head>
+        <meta charset ="utf-8">
+        <title>Health web</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="style_setting.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Poppins:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@300&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+       <!-- information form -->
+       <div class="container">
+        <div class="title">Phiếu điền thông tin</div>
+        <form action="#">
+            <div class="user-details">
+                <div class="input-box">
+                    <span class="details l">Họ và tên </span>
+                    <input type="text" id="inp_name" placeholder="Enter your full name" required pattern="\S+.*">
+                </div>
+                <div class="input-box">
+                    <span class="details">Độ tuổi</span>
+                    <input type="text" id="inp_ages" placeholder="Enter your ages" required pattern="\S+.*">
+                </div>
+                <div class="input-box">
+                    <span class="details l">Cân nặng (kg) </span>
+                    <input type="text" id="inp_weight" placeholder="Enter your weight" required pattern="\S+.*">
+                </div>
+                <div class="input-box">
+                    <span class="details">Chiều cao (m)</span>
+                    <input type="text" id="inp_height" placeholder="Enter your height" required pattern="\S+.*">
+                </div>
+            </div>
+            <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <div class="radio-check">
+            <div class="gender-details">
+                <form action="" id="gender_radio">
+                 <input type="radio" name="gender" id="dot-1">
+                 <input type="radio" name="gender" id="dot-2">
+                </form>
+                <span class="gender-title">Giới tính</span>
+                <div class="category">
+                    <label for="dot-1">
+                        <span class="dot one"></span>
+                        <span class="gender">Nam</span>
+                    </label>
+                    <label for="dot-2">
+                        <span class="dot two"></span>
+                        <span class="gender">Nữ</span>
+                    </label>
+                </div>
+            </div>
+            <div class="sickness-details">
+                <!-- <form action="" id="sickness_radio"> -->
+                    <input type="radio" name="sickness" id="dot-1a">
+                    <input type="radio" name="sickness" id="dot-2a">
+                    <input type="radio" name="sickness" id="dot-3a">
+                    <input type="radio" name="sickness" id="dot-4a">
+                <!-- </form> -->
+                <span class="sickness-title">Bệnh trạng</span>
+                <div class="categoryA">
+                    <label for="dot-1a">
+                        <span class="dot oneA"></span>
+                        <span class="sickness">Đái tháo đường</span>
+                    </label>
+                    <label for="dot-2a">
+                        <span class="dot twoA"></span>
+                        <span class="sickness">Suy thận mạn</span>
+                    </label>
+                    <label for="dot-3a">
+                        <span class="dot threeA"></span>
+                        <span class="sickness">Cao huyết áp</span>
+                    </label>
+                    <label for="dot-4a">
+                        <span class="dot fourA"></span>
+                        <span class="sickness">Bình thường</span>
+                    </label>
+                </div>
+            </div>
+            <div class="job-details">
+                <!-- <form action="" id="job_radio"> -->
+                    <input type="radio" name="job" id="dot-1b">
+                    <input type="radio" name="job" id="dot-2b">
+                    <input type="radio" name="job" id="dot-3b">
+                <!-- </form> -->
+                <span class="job-title">Nghề nghiệp</span>
+                <div class="categoryB">
+                    <label for="dot-1b">
+                        <span class="dot oneB"></span>
+                        <span class="job">Lao động nặng</span>
+                    </label>
+                    <label for="dot-2b">
+                        <span class="dot twoB"></span>
+                        <span class="job">Lao động vừa</span>
+                    </label>
+                    <label for="dot-3b">
+                        <span class="dot threeB"></span>
+                        <span class="job">Lao động nhẹ</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
+            <div class="button">
+                <a href="index.html">
+                        <input type="submit" value="Thiết kế thực đơn">
+                </a>
+            </div>
+        </form>
+        </div> 
+    </body>
+</html>
