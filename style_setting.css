@@ -179,6 +179,15 @@ form input[type="radio"]{
     box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
     transition:all 0.3s ease;
 }
+/* color key */
+.title {
+    color: #4A707A;
+}
+.details, .gender-title, .sickness-title, .job-title{
+    color: #4A707A;
+    font-size: 20px;
+    font-family: 'Poppin', serif;
+}
 @media (max-width: 584px){
     .container{
         max-width: 100%;
@@ -192,7 +201,8 @@ form input[type="radio"]{
         width: 100%;
     }
     form .sickness-details .categoryA{
-        height: auto;
+        display: flex;
+        justify-content: space-evenly;
         width: 100%;
     }
     form .job-details .categoryB{
@@ -205,6 +215,20 @@ form input[type="radio"]{
         overflow-y: scroll;
     }
     .user-details::-webkit-scrollbar{
+        width: 0;
+    }
+    .container form .radio-check{
+        max-height: 200px;
+        overflow-y: scroll;
+    }
+    .radio-check::-webkit-scrollbar{
+        width: 0;
+        height: 20em;
+    }
+    .container {
+        overflow-y: scroll;
+    }
+    .container::-webkit-scrollbar{
         width: 0;
     }
 }
