@@ -92,114 +92,14 @@ checkbtn.onclick = function () {
     : 'fa-solid fa-bars-staggered'
 }
 
-// setting page-----------------------------------------------------------------------------------------------------------------------------------------------------------------
-    const inpName = document.querySelector("#inp_name");
-    const inpAges = document.querySelector("#inp_ages");
-    const inpWeight = document.querySelector("#inp_weight");
-    const inpHeight = document.querySelector("#inp_height");
-    localStorage.setItem("FullName", inpName.innerHTML);
-    localStorage.setItem("Ages", inpAges.innerHTML);
-    localStorage.setItem("Weight", inpWeight.innerHTML);
-    localStorage.setItem("Height", inpHeight.innerHTML);
-    
-
-
-    function restore(){
-        var namelis = localStorage.getItem("inpName") // Get your data from local storage
-        
-        if(namelis === null || namelis === undefined){
-          return; // return if the user has not visited this site/input
-        }
-        
-        inpName.value = namelis; // Sets the value of the input to the restore data
-        
-        return;
-      }
-      
-      restore()
-      
-      function save(event_data){
-        localStorage.setItem("inpName",inpName.value) // Save the value in localStorage
-      }
-      
-      inpName.addEventListener("change",save);
-
-
-
-// localStorage.setItem('inp_name', JSON.stringify({#inp_name: 'inp_name.innerHTML'}));
-// localStorage.getItem('FullName');
-// localStorage.getItem('Ages');
-// localStorage.getItem('Weight');
-// localStorage.getItem('Height');
-
-
-
-
-
-
-
-
-// const sendInfo = document.querySelector(".button input");
-// let FullName;
-// let Ages;
-// let Weight;
-// let Height;
-
-// const handleInfo = () =>{
-//     FullName = inpName.value.trim();
-//     Ages = inpAges.value.trim();
-//     Weight = inpWeight.value.trim();
-//     Height = inpHeight.value.trim();
-//     if(!FullName) return;
-//     if(!Ages) return;
-//     if(!Weight) return;
-//     if(!Height) return;
-
-//     localStorage.setItem("FullName", inp_name.innerHTML);
-//     localStorage.setItem("Ages", inp_ages.innerHTML);
-//     localStorage.setItem("Weight", inp_weight.innerHTML);
-//     localStorage.setItem("Height", inp_height.innerHTML);
-    
-    
-//     inp_name.innerHTML = localStorage.getItem("FullName");
-// inp_ages.innerHTML = localStorage.getItem("Ages");
-// inp_weight.innerHTML = localStorage.getItem("Weight");
-// inp_height.innerHTML = localStorage.getItem("Height");
-
-    // console.log(FullName);
-    // console.log(Ages);
-    // console.log(Weight);
-    // console.log(Height);
-// }
-
-// sendInfo.addEventListener("click", handleInfo);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    
-
-
-//     let Gender = document.getElementById('gender_radio');
-//     radioNodeList = Gender.elements['gender'];
-//     let checkValue = radioNodeList.value;
-
-
-//     document.getElementById(sub_btn).onclick = function(){
-//         inp_name.innerHTML =  document.getElementById('inp_name');
-// inp_ages.innerHTML =  document.getElementById('inp_ages');
-// inp_weight.innerHTML =  document.getElementById('inp_weight');
-// inp_height.innerHTML =  document.getElementById('inp_height');
-//     }
-
-    
+// setting page from index page -----------------------------------------------------------------------------------------------------------------------------------------------------------------
+window.addEventListener('load', ()=> {
+    const name = localStorage.getItem('NAME');
+    const ages = localStorage.getItem('AGES');
+    const weight = localStorage.getItem('WEIGHT');
+    const height = localStorage.getItem('HEIGHT');
+    document.getElementById('fullname').value = name;
+    document.getElementById('ages').value = ages;
+    document.getElementById('wght').value = weight;
+    document.getElementById('hght').value = height;
+})

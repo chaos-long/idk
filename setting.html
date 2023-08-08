@@ -14,13 +14,35 @@
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppin:wght@300&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@400&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="script.js" defer></script>
+        <script>
+            window.addEventListener('load', ()=> {
+            const name = localStorage.getItem('NAME');
+            const ages = localStorage.getItem('AGES');
+            const weight = localStorage.getItem('WEIGHT');
+            const height = localStorage.getItem('HEIGHT');
+            document.getElementById('inp_name').value = name;
+            document.getElementById('inp_ages').value = ages;
+            document.getElementById('inp_weight').value = weight;
+            document.getElementById('inp_height').value = height;
+})
+            function handleSubmit () {
+                const FullName = document.getElementById('inp_name').value;
+                const Ages = document.getElementById('inp_ages').value;
+                const Wght = document.getElementById('inp_weight').value;
+                const Hght = document.getElementById('inp_height').value;
+                localStorage.setItem("NAME", FullName);
+                localStorage.setItem("AGES", Ages);
+                localStorage.setItem("WEIGHT", Wght);
+                localStorage.setItem("HEIGHT", Hght);
+            return;
+            }
+        </script>
     </head>
     <body>
        <!-- information form -->
        <div class="container">
         <div class="title">Phiếu điền thông tin</div>
-        <form action="#">
+        <form action="index.html" method="post ">
             <div class="user-details">
                 <div class="input-box">
                     <span class="details">Họ và tên </span>
@@ -111,7 +133,7 @@
         <!-- //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <div class="button">
                 <a href="index.html">
-                        <input type="submit" value="Thiết kế thực đơn">
+                        <input type="submit" onclick="handleSubmit()"  value="Thiết kế thực đơn">
                 </a>
             </div>
         </form>

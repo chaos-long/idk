@@ -21,9 +21,12 @@
                 <li><a href="Menu.html">Menu</a></li>
                 <li><a href="BMI.html" >BMI</a></li>
                 <li><a href="More.html" >More</a></li>
-                <li><a href="setting.html">Setting</a></li>  
+                <li><a href="setting.html" onclick="saveHandle()">Setting</a></li>  
             </ul>
-            <a href="#" class="hello_name">HELLO</a>
+            <div class="welcome_frame">
+                <p class="hello_name">HELLO <input id="fullname"></p>
+            </div>
+
             <input type="checkbox" id="check">
             <div class="checkbtn">
                 <i class="fa-solid fa-bars-staggered"></i>
@@ -32,7 +35,7 @@
                 <li><a href="Menu.html">Menu</a></li>
                 <li><a href="BMI.html" >BMI</a></li>
                 <li><a href="More.html" >More</a></li>  
-                <li><a href="setting.html">Setting</a></li>  
+                <li><a href="setting.html" onclick="saveHandle()">Setting</a></li>  
             </div>
         </nav>
         <!-- chatbox not chatbot -->
@@ -59,5 +62,10 @@
             </div>
         </div>
         </div>
+        <span id="setting_info" style="display: none;">
+                <input id="ages">
+                <input id="wght">
+                <input id="hght"></p>
+        </span>
     </body>
 </html>
