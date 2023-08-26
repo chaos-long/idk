@@ -134,23 +134,24 @@ form .job-details .categoryB{
     border: 5px solid transparent;
     margin-right: 10px;
 }
+/* dot radio------------------------------------------------------------------------ */
 #dot-1:checked ~.category label .one,
 #dot-2:checked ~.category label .two{
     border-color: #4A707A;
-    background: #DDDDDA
+    background: #DDDDDA;
 }
 #dot-1a:checked ~ .categoryA label .oneA,
 #dot-2a:checked ~ .categoryA label .twoA,
 #dot-3a:checked ~ .categoryA label .threeA,
 #dot-4a:checked ~ .categoryA label  .fourA{
     border-color: #4A707A;
-    background: #DDDDDA
+    background: #DDDDDA;
 }
 #dot-1b:checked ~.categoryB label .oneB,
 #dot-2b:checked ~.categoryB label .twoB,
 #dot-3b:checked ~.categoryB label .threeB{
     border-color: #4A707A;
-    background: #DDDDDA
+    background: #DDDDDA;
 }
 form input[type="radio"]{
     display: none;

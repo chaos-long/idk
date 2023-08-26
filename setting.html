@@ -24,12 +24,64 @@
             document.getElementById('inp_ages').value = ages;
             document.getElementById('inp_weight').value = weight;
             document.getElementById('inp_height').value = height;
+
+
+            const gender  = localStorage.getItem('GENDER');
+            const Male = document.getElementById('dot-1');
+            const Female = document.getElementById('dot-2');
+            if (gender == "Male") 
+                Male.checked = true;
+            else if (gender == "Female")   Female.checked = true;
+
+
+            const sickness = localStorage.getItem('SICK');
+            const daithaoduong = document.getElementById('dot-1a');
+            const suythanman = document.getElementById('dot-2a');
+            const caohuyetap = document.getElementById('dot-3a');
+            const binhthuong = document.getElementById('dot-4a');
+            if (sickness == "daithaoduong") 
+                daithaoduong.checked = true;
+            else if (sickness == "suythanman") suythanman.checked = true;
+            else if (sickness== "caohuyetap") caohuyetap.checked = true;
+            else binhthuong.checked = true;
+
+            const jobs = localStorage.getItem('JOBS');
+            const laodongnang = document.getElementById('dot-1b');
+            const laodongvua = document.getElementById('dot-2b');
+            const laodongnhe = document.getElementById('dot-3b');
+            if (jobs == "ldnang") 
+                laodongnang.checked = true;
+            else if (jobs == "ldvua") laodongvua.checked = true;
+            else if (jobs== "ldnhe") laodongnhe.checked = true;
 })
             function handleSubmit () {
                 const FullName = document.getElementById('inp_name').value;
                 const Ages = document.getElementById('inp_ages').value;
                 const Wght = document.getElementById('inp_weight').value;
                 const Hght = document.getElementById('inp_height').value;
+                var Jobs;
+                var Gender;
+                var Sick;
+                var a = document.getElementsByName("gender");
+                if(a[0].checked) Gender = a[0].value; 
+                    else Gender = a[1].value; 
+                
+                var a = document.getElementsByName("job");
+                if(a[0].checked) Jobs = a[0].value;
+                    else if(a[1].checked) Jobs = a[1].value;
+                        else Jobs = a[2].value;
+
+                var a = document.getElementsByName("sickness");
+                if(a[0].checked) Sick = a[0].value;
+                    else if(a[1].checked) Sick = a[1].value;
+                        else if(a[2].checked) Sick = a[2].value;
+                            else Sick = a[3].value;
+
+                localStorage.setItem("SICK", Sick);
+                localStorage.setItem("JOBS", Jobs);
+                localStorage.setItem("GENDER", Gender);
+
+
                 localStorage.setItem("NAME", FullName);
                 localStorage.setItem("AGES", Ages);
                 localStorage.setItem("WEIGHT", Wght);
@@ -64,10 +116,10 @@
             <!-- ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// -->
             <div class="radio-check">
             <div class="gender-details">
-                <form action="" id="gender_radio">
-                 <input type="radio" name="gender" id="dot-1">
-                 <input type="radio" name="gender" id="dot-2">
-                </form>
+                <form action="index.html" id="radio" method="post">
+                 <input type="radio" name="gender" value="Male" id="dot-1">
+                 <input type="radio" name="gender" value="Female" id="dot-2">
+                
                 <span class="gender-title">Giới tính</span>
                 <div class="category">
                     <label for="dot-1">
@@ -81,12 +133,12 @@
                 </div>
             </div>
             <div class="sickness-details">
-                <!-- <form action="" id="sickness_radio"> -->
-                    <input type="radio" name="sickness" id="dot-1a">
-                    <input type="radio" name="sickness" id="dot-2a">
-                    <input type="radio" name="sickness" id="dot-3a">
-                    <input type="radio" name="sickness" id="dot-4a">
-                <!-- </form> -->
+                
+                    <input type="radio" name="sickness" value="daithaoduong" id="dot-1a">
+                    <input type="radio" name="sickness" value="suythanman" id="dot-2a">
+                    <input type="radio" name="sickness" value="caohuyetap" id="dot-3a">
+                    <input type="radio" name="sickness" value="binhthuong" id="dot-4a">
+              
                 <span class="sickness-title">Bệnh trạng</span>
                 <div class="categoryA">
                     <label for="dot-1a">
@@ -108,12 +160,13 @@
                 </div>
             </div>
             <div class="job-details">
-                <!-- <form action="" id="job_radio"> -->
-                    <input type="radio" name="job" id="dot-1b">
-                    <input type="radio" name="job" id="dot-2b">
-                    <input type="radio" name="job" id="dot-3b">
-                <!-- </form> -->
-                <span class="job-title">Nghề nghiệp</span>
+                
+                    <input type="radio" name="job" value="ldnang" id="dot-1b">
+                    <input type="radio" name="job" value="ldvua" id="dot-2b">
+                    <input type="radio" name="job" value="ldnhe" id="dot-3b">
+               
+                </form>               
+                 <span class="job-title">Nghề nghiệp</span>
                 <div class="categoryB">
                     <label for="dot-1b">
                         <span class="dot oneB"></span>
