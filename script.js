@@ -93,41 +93,4 @@ checkbtn.onclick = function () {
 }
 
 // setting page from index page -----------------------------------------------------------------------------------------------------------------------------------------------------------------
-window.addEventListener('load', ()=> {
-    const name = localStorage.getItem('NAME');
-    const ages = localStorage.getItem('AGES');
-    const weight = localStorage.getItem('WEIGHT');
-    const height = localStorage.getItem('HEIGHT');
-    document.getElementById('fullname').value = name;
-    document.getElementById('ages').value = ages;
-    document.getElementById('wght').value = weight;
-    document.getElementById('hght').value = height;
 
-    const gender  = localStorage.getItem('GENDER');
-    const Male = document.getElementById('dot_1');
-    const Female = document.getElementById('dot_2');
-    if (gender == "Male") 
-        Male.checked = true;
-    else Female.checked = true;
-
-
-    const sickness = localStorage.getItem('SICK');
-    const daithaoduong = document.getElementById('dot_1a');
-    const suythanman = document.getElementById('dot_2a');
-    const caohuyetap = document.getElementById('dot_3a');
-    const binhthuong = document.getElementById('dot_4a');
-    if (sickness == "daithaoduong") 
-        daithaoduong.checked = true;
-    else if (sickness == "suythanman") suythanman.checked = true;
-    else if (sickness == "caohuyetap") caohuyetap.checked = true;
-    else binhthuong.checked = true;
-
-    const jobs = localStorage.getItem('JOBS');
-    const laodongnang = document.getElementById('dot_1b');
-    const laodongvua = document.getElementById('dot_2b');
-    const laodongnhe = document.getElementById('dot_3b');
-    if (jobs == "ldnang") 
-        laodongnang.checked = true;
-    else if (jobs == "ldvua") laodongvua.checked = true;
-    else if (jobs== "ldnhe") laodongnhe.checked = true;
-})
