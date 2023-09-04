@@ -21,10 +21,11 @@
                 <li><a href="Menu.html">Menu</a></li>
                 <li><a href="BMI.html" >BMI</a></li>
                 <li><a href="More.html" >More</a></li>
-                <li><a href="setting.html" onclick="saveHandle()">Setting</a></li>  
+                <li><a href="setting.html" >Setting</a></li>  
             </ul>
             <div class="welcome_frame">
-                <p class="hello_name">HELLO <input id="fullname"></p>
+                <p class="hello_name">HELLO <input id="fullname" ></p>
+                <script> document.getElementById('fullname').value = localStorage.getItem('NAME')</script>
             </div>
 
             <input type="checkbox" id="check">
@@ -35,7 +36,7 @@
                 <li><a href="Menu.html">Menu</a></li>
                 <li><a href="BMI.html" >BMI</a></li>
                 <li><a href="More.html" >More</a></li>  
-                <li><a href="setting.html" onclick="saveHandle()">Setting</a></li>  
+                <li><a href="setting.html">Setting</a></li>  
             </div>
         </nav>
         <!-- chatbox not chatbot -->
@@ -62,7 +63,9 @@
             </div>
         </div>
         </div>
-        
+        <div >
+
+        </div>
     </body>
 </html>
 

@@ -1,5 +1,4 @@
 
-
 window.addEventListener('load', ()=> {
     const name = localStorage.getItem('NAME');
     const ages = localStorage.getItem('AGES');
@@ -9,7 +8,7 @@ window.addEventListener('load', ()=> {
     document.getElementById('inp_ages').value = ages;
     document.getElementById('inp_weight').value = weight;
     document.getElementById('inp_height').value = height;
-
+  
 
     const gender  = localStorage.getItem('GENDER');
     const Male = document.getElementById('dot-1');
@@ -44,6 +43,7 @@ window.addEventListener('load', ()=> {
         const Ages = document.getElementById('inp_ages').value;
         const Wght = document.getElementById('inp_weight').value;
         const Hght = document.getElementById('inp_height').value;
+       
         var Jobs;
         var Gender;
         var Sick;
