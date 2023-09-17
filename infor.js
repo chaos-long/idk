@@ -40,20 +40,21 @@ class meal {
   }
 }
 
-var thucDon1 = [];
-var thucDon2 = [];
+let thucDon1 = [];
+make_menu();
 
 
 window.addEventListener('load', ()=> {
+  if(document.getElementById('inp_name') != null){
   const name = localStorage.getItem('NAME');
   const ages = localStorage.getItem('AGES');
   const weight = localStorage.getItem('WEIGHT');
   const height = localStorage.getItem('HEIGHT');
-  document.getElementById('inp_name').value = name;
-  document.getElementById('inp_ages').value = ages;
-  document.getElementById('inp_weight').value = weight;
-  document.getElementById('inp_height').value = height;
-
+  
+    document.getElementById('inp_name').value = name;
+    document.getElementById('inp_ages').value = ages;
+    document.getElementById('inp_weight').value = weight;
+    document.getElementById('inp_height').value = height;
 
   const gender  = localStorage.getItem('GENDER');
   const Male = document.getElementById('dot-1');
@@ -82,6 +83,7 @@ window.addEventListener('load', ()=> {
       laodongnang.checked = true;
   else if (jobs == "ldvua") laodongvua.checked = true;
   else if (jobs== "ldnhe") laodongnhe.checked = true;
+  }
 })
   function handleSubmit () {
       const FullName = document.getElementById('inp_name').value;
@@ -107,36 +109,11 @@ window.addEventListener('load', ()=> {
               else if(a[2].checked) Sick = a[2].value;
                   else Sick = a[3].value;
 
-      var BMR, Calo;
-      if(Gender == "MALE")
-          BMR = 88.362 + (13.397 * Wght) + (4.799 * Hght) - (5.677 * Ages);
-      else
-          BMR = 447.593 + (9.247 * Wght) + (3.098 * Hght) - (4.330 * Ages);
-      if(Jobs == "ldnhe")
-          Calo = BMR * 1.375;
-      else if(Jobs == "ldvua")
-          Calo = BMR * 1.55;
-      else
-          Calo = BMR * 1.725;
       
-      if(Sick == "daithaoduong"){
-          dtdud(Calo);
-      } 
-      else if(Sick == "suythanman"){
-
-      }
-      else if(Sick == "caohuyetap"){
-
-      }
-      else if(Sick == "binhthuong"){
-
-      }
 
       localStorage.setItem("SICK", Sick);
       localStorage.setItem("JOBS", Jobs);
       localStorage.setItem("GENDER", Gender);
-
-
       localStorage.setItem("NAME", FullName);
       localStorage.setItem("AGES", Ages);
       localStorage.setItem("WEIGHT", Wght);
@@ -144,10 +121,102 @@ window.addEventListener('load', ()=> {
   return;
   }
 
+  function chaud(Calo) {
+    //làm rỗng thực đơn
+    thucDon1 = [];
+
+    //nguyên liệu
+    const yenmach = new NguyenLieu("yến mạch", 0, "gram");
+    const nuoc = new NguyenLieu("nước", 0, "ml");
+    const hatlanh = new NguyenLieu("hạt lanh", 0, "gram");
+    const quadua = new NguyenLieu("quả dứa", 0, "gram");
+    const ga = new NguyenLieu("gà", 0, "gram");
+    const rauxanh = new NguyenLieu("rau xanh", 0, "gram");
+    const bo = new NguyenLieu("bơ", 0, "gram");
+    const hanhtay = new NguyenLieu("hành tây", 0, "gram");
+    const loxanh = new NguyenLieu("lơ xanh", 0, "gram");
+    const cachua = new NguyenLieu("cà chua", 0, "gram");
+    const cahoi = new NguyenLieu("cá hồi", 0, "gram");
+    const luamach = new NguyenLieu("lúa mạch", 0, "gram");
+
+    //món ăn
+    const chaoyenmachkhongduongvoihatlanhvaquadua = new MonAn("cháo yến mạch không đường với hạt lanh và quả dứa", "sau này sẽ là địa chỉ của hình món ăn :v", [yenmach, nuoc, hatlanh, quadua], "https://youtube.com/shorts/vVVYkvxPAG0?si=bWOv7hiDvcyVIku0");
+    const ganuongkhongdavoirauxanh = new MonAn("gà nướng không da với rau xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [ga, rauxanh, bo, hanhtay], "https://youtu.be/jzY0G2ziPIs?si=QyJJNqeSSNalqIn-");
+    const suploxanhvacachua = new MonAn("xúp lơ xanh và cà chua", "sau này sẽ là địa chỉ của hình món ăn :v", [loxanh, cachua, nuoc], "https://youtu.be/a7qOAxfDEe0?si=cbNRRJm9K8qM5nhK");
+    const cahoinuongvoiluamachvarauxanh = new MonAn("cá hồi nướng với lúa mạch và rau xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [cahoi, luamach, rauxanh], "https://youtu.be/0JOfwDLuTEU?si=GxUPZmlZMYYjXFbC");
+
+    //cập nhật số lượng
+    chaoyenmachkhongduongvoihatlanhvaquadua.capNhatSoLuongNguyenLieu("yến mạch", Math.round((8.7 * Calo / 100) / 0.676));
+    chaoyenmachkhongduongvoihatlanhvaquadua.capNhatSoLuongNguyenLieu("nước", 100);
+    chaoyenmachkhongduongvoihatlanhvaquadua.capNhatSoLuongNguyenLieu("hạt lanh", Math.round((4.3 * Calo / 100) / 5.339));
+    chaoyenmachkhongduongvoihatlanhvaquadua.capNhatSoLuongNguyenLieu("quả dứa", Math.round((2.2 * Calo / 100) / 0.5));
+    ganuongkhongdavoirauxanh.capNhatSoLuongNguyenLieu("gà", Math.round((18.3 * Calo / 100) / 2.39));
+    ganuongkhongdavoirauxanh.capNhatSoLuongNguyenLieu("rau xanh", Math.round((9.1 * Calo / 100) / 0.3));
+    ganuongkhongdavoirauxanh.capNhatSoLuongNguyenLieu("bơ", Math.round((1.5 * Calo / 100) / 1.6));
+    ganuongkhongdavoirauxanh.capNhatSoLuongNguyenLieu("hành tây", Math.round((1.5 * Calo / 100) / 0.4));
+    suploxanhvacachua.capNhatSoLuongNguyenLieu("lơ xanh", Math.round((5.2 * Calo / 100) / 0.337));
+    suploxanhvacachua.capNhatSoLuongNguyenLieu("cà chua", Math.round((5.2 * Calo / 100) / 0.18));
+    suploxanhvacachua.capNhatSoLuongNguyenLieu("nước", 100);
+    cahoinuongvoiluamachvarauxanh.capNhatSoLuongNguyenLieu("cá hồi", Math.round((17.4 * Calo / 100) / 2.082));
+    cahoinuongvoiluamachvarauxanh.capNhatSoLuongNguyenLieu("lúa mạch", Math.round((10.4 * Calo / 100) / 3.54));
+    cahoinuongvoiluamachvarauxanh.capNhatSoLuongNguyenLieu("rau xanh", Math.round((7 * Calo / 100) / 0.3));
+
+    //bữa ăn
+    const sang = new meal("7h", [chaoyenmachkhongduongvoihatlanhvaquadua]);
+    const trua = new meal("11h", [ganuongkhongdavoirauxanh]);
+    const chieu = new meal("17h", [suploxanhvacachua, cahoinuongvoiluamachvarauxanh]);
+
+    thucDon1 = [sang, trua, chieu];
+  }
+
+  function stmud(Calo) {
+    //làm rỗng thực đơn
+    thucDon1 = [];
+
+    //nguyên liệu
+    const banhmiluamach = new NguyenLieu("bánh mì lúa mạch", 0, "gram");
+    const mutdau = new NguyenLieu("mứt dâu", 0, "gram");
+    const bohatlanh = new NguyenLieu("bơ hạt lanh", 0, "gram");
+    const com = new NguyenLieu("cơm", 0, "gram");
+    const thitga = new NguyenLieu("thịt gà", 0, "gram");
+    const rauxanh = new NguyenLieu("rau xanh", 0, "gram");
+    const banhmi = new NguyenLieu("bánh mì", 0, "gram");
+    const hanhtay = new NguyenLieu("hành tây", 0, "gram");
+    const hatlanh = new NguyenLieu("hạt lanh", 0, "gram");
+    const cahoi = new NguyenLieu("cá hồi", 0, "gram");
+    const luamach = new NguyenLieu("lúa mạch", 0, "gram");
+
+    //món ăn
+    const banhmiluamachvoimutdauvabohatlanh = new MonAn("bánh mì lúa mạch với mứt dâu và bơ hạt lanh", "sau này sẽ là địa chỉ của hình món ăn :v", [banhmiluamach, mutdau, bohatlanh]);
+    const comtrangvoithitganuong = new MonAn("cơm trắng với thịt gà nướng(loại bỏ da) và rau xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [com, thitga, rauxanh], "https://youtu.be/jzY0G2ziPIs?si=QyJJNqeSSNalqIn-");
+    const banhmisandwichhapvoihanhtayvahatlanh = new MonAn("bánh mì sandwich hấp với hành tây và hạt lanh", "sau này sẽ là địa chỉ của hình món ăn :v", [banhmi, hanhtay, hatlanh]);
+    const cahoinuongvoiluamachvarauxanh = new MonAn("cá hồi nướng với lúa mạch và rau xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [cahoi, luamach, rauxanh], "https://youtu.be/0JOfwDLuTEU?si=GxUPZmlZMYYjXFbC");
+
+    //cập nhật số lượng
+    banhmiluamachvoimutdauvabohatlanh.capNhatSoLuongNguyenLieu("bánh mì lúa mạch", Math.round((11.1 * Calo / 100) / 2.591));
+    banhmiluamachvoimutdauvabohatlanh.capNhatSoLuongNguyenLieu("mứt dâu", Math.round((6.7 * Calo / 100) / 6));
+    banhmiluamachvoimutdauvabohatlanh.capNhatSoLuongNguyenLieu("bơ hạt lanh", Math.round((4.4 * Calo / 100) / 8.29));
+    comtrangvoithitganuong.capNhatSoLuongNguyenLieu("cơm", Math.round((14.8 * Calo / 100) / 1.3));
+    comtrangvoithitganuong.capNhatSoLuongNguyenLieu("thịt gà", Math.round((8.9 * Calo / 100) / 2.39));
+    comtrangvoithitganuong.capNhatSoLuongNguyenLieu("rau xanh", Math.round((5.9 * Calo / 100) / 0.3));
+    banhmisandwichhapvoihanhtayvahatlanh.capNhatSoLuongNguyenLieu("bánh mì", Math.round((7.4 * Calo / 100) / 2.646));
+    banhmisandwichhapvoihanhtayvahatlanh.capNhatSoLuongNguyenLieu("hành tây", Math.round((5.6 * Calo / 100) / 0.397));
+    banhmisandwichhapvoihanhtayvahatlanh.capNhatSoLuongNguyenLieu("hạt lanh", Math.round((5.6 * Calo / 100) / 5.339));
+    cahoinuongvoiluamachvarauxanh.capNhatSoLuongNguyenLieu("cá hồi", Math.round((14.8 * Calo / 100) / 2.082));
+    cahoinuongvoiluamachvarauxanh.capNhatSoLuongNguyenLieu("lúa mạch", Math.round((8.9 * Calo / 100) / 3.54));
+    cahoinuongvoiluamachvarauxanh.capNhatSoLuongNguyenLieu("rau xanh", Math.round((5.9 * Calo / 100) / 0.3));
+
+    //bữa ăn
+    const sang = new meal("7h", [banhmiluamachvoimutdauvabohatlanh]);
+    const trua = new meal("11h", [comtrangvoithitganuong]);
+    const chieu = new meal("17h", [banhmisandwichhapvoihanhtayvahatlanh, cahoinuongvoiluamachvarauxanh]);
+
+    thucDon1 = [sang, trua, chieu];
+  }
+
   function dtdud(Calo) {
     //làm rỗng thực đơn
     thucDon1 = [];
-    thucDon2 = [];
 
     //nguyên liệu
     const gaonep = new NguyenLieu("gạo nếp", 0, "gram");
@@ -183,23 +252,56 @@ window.addEventListener('load', ()=> {
     const chieuphu = new meal("20h", [dauphuluoc]);
 
     //cập nhật số lượng
-    xoidauxanh.capNhatSoLuongNguyenLieu("gạo nếp", 12 * Calo / 100);
-    xoidauxanh.capNhatSoLuongNguyenLieu("đậu xanh", 0.3 * Calo / 100);
-    xoidauxanh.capNhatSoLuongNguyenLieu("giò lụa", 6 * Calo / 100);
-    quatuoi.capNhatSoLuongNguyenLieu("thanh long", 9 * Calo / 100)
-    comthitgarang.capNhatSoLuongNguyenLieu("cơm", 15 * Calo / 100);
-    comthitgarang.capNhatSoLuongNguyenLieu("thịt gà ta", 9 * Calo / 100);
-    muopdangluoc.capNhatSoLuongNguyenLieu("mướp đắng", 5 * Calo / 100);
-    sua.capNhatSoLuongNguyenLieu("sữa đậu nành", 4.3 * Calo / 100)
-    coman.capNhatSoLuongNguyenLieu("cơm", 15 * Calo / 100);
-    cakho.capNhatSoLuongNguyenLieu("cá trôi", 7.1 * Calo / 100);
-    mangxao.capNhatSoLuongNguyenLieu("măng tươi", 4 * Calo / 100);
-    mangxao.capNhatSoLuongNguyenLieu("dầu ăn", 10 * Calo / 100);
-    dauphuluoc.capNhatSoLuongNguyenLieu("đậu phụ", 5 * Calo / 100);
+    xoidauxanh.capNhatSoLuongNguyenLieu("gạo nếp", Math.round((12 * Calo / 100) / 0.97));
+    xoidauxanh.capNhatSoLuongNguyenLieu("đậu xanh", Math.round((0.3 * Calo / 100) / 3.47));
+    xoidauxanh.capNhatSoLuongNguyenLieu("giò lụa", Math.round((6 * Calo / 100) / 2.3));
+    quatuoi.capNhatSoLuongNguyenLieu("thanh long", Math.round((9 * Calo / 100) / 0.6));
+    comthitgarang.capNhatSoLuongNguyenLieu("cơm", Math.round((15 * Calo / 100) / 1.3));
+    comthitgarang.capNhatSoLuongNguyenLieu("thịt gà ta", Math.round((9 * Calo / 100) / 2.39));
+    muopdangluoc.capNhatSoLuongNguyenLieu("mướp đắng", Math.round((5 * Calo / 100) / 0.334));
+    sua.capNhatSoLuongNguyenLieu("sữa đậu nành", Math.round((4.3 * Calo / 100) / 0.54));
+    coman.capNhatSoLuongNguyenLieu("cơm", Math.round((15 * Calo / 100) / 1.3));
+    cakho.capNhatSoLuongNguyenLieu("cá trôi", Math.round((7.1 * Calo / 100) / 1.27));
+    mangxao.capNhatSoLuongNguyenLieu("măng tươi", Math.round((4 * Calo / 100) / 0.2));
+    mangxao.capNhatSoLuongNguyenLieu("dầu ăn", Math.round((10 * Calo / 100) / 8.841));
+    dauphuluoc.capNhatSoLuongNguyenLieu("đậu phụ", Math.round((5 * Calo / 100) / 0.76));
 
     //cập nhật thực đơn
     thucDon1 = [sang, sangphu, trua, truaphu, chieu, chieuphu];
   }
 
   
-  
+  function make_menu() {
+    const Ages = localStorage.getItem('AGES');
+    const Wght = localStorage.getItem('WEIGHT');
+    const Hght = localStorage.getItem('HEIGHT'); 
+    const Gender = localStorage.getItem('GENDER');
+    const Sick = localStorage.getItem('SICK');
+    const Jobs = localStorage.getItem('JOBS');
+    var BMR, Calo;
+    if(Gender == "MALE")
+        BMR = 88.362 + (13.397 * Wght) + (4.799 * Hght) - (5.677 * Ages);
+    else
+        BMR = 447.593 + (9.247 * Wght) + (3.098 * Hght) - (4.330 * Ages);
+    if(Jobs == "ldnhe")
+        Calo = BMR * 1.375;
+    else if(Jobs == "ldvua")
+        Calo = BMR * 1.55;
+    else
+        Calo = BMR * 1.725;
+    
+    if(Sick == "daithaoduong"){
+        dtdud(Calo);
+    } 
+    else if(Sick == "suythanman"){
+        stmud(Calo);
+    }
+    else if(Sick == "caohuyetap"){
+        chaud(Calo);
+    }
+    else if(Sick == "binhthuong"){
+
+    }
+    if(document.getElementById("ten_thucdon") != null)
+      document.getElementById("ten_thucdon").innerHTML = thucDon1[0].monAn[0].nguyenLieu[0].soLuong + " " + thucDon1[0].monAn[0].nguyenLieu[0].donVi;
+  }
