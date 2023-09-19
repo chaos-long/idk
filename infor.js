@@ -187,10 +187,10 @@ window.addEventListener('load', ()=> {
     const luamach = new NguyenLieu("lúa mạch", 0, "gram");
 
     //món ăn
-    const banhmiluamachvoimutdauvabohatlanh = new MonAn("bánh mì lúa mạch với mứt dâu và bơ hạt lanh", "sau này sẽ là địa chỉ của hình món ăn :v", [banhmiluamach, mutdau, bohatlanh]);
-    const comtrangvoithitganuong = new MonAn("cơm trắng với thịt gà nướng(loại bỏ da) và rau xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [com, thitga, rauxanh], "https://youtu.be/jzY0G2ziPIs?si=QyJJNqeSSNalqIn-");
-    const banhmisandwichhapvoihanhtayvahatlanh = new MonAn("bánh mì sandwich hấp với hành tây và hạt lanh", "sau này sẽ là địa chỉ của hình món ăn :v", [banhmi, hanhtay, hatlanh]);
-    const cahoinuongvoiluamachvarauxanh = new MonAn("cá hồi nướng với lúa mạch và rau xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [cahoi, luamach, rauxanh], "https://youtu.be/0JOfwDLuTEU?si=GxUPZmlZMYYjXFbC");
+    const banhmiluamachvoimutdauvabohatlanh = new MonAn("bánh mì lúa mạch với mứt dâu và bơ hạt lanh", "menu_img/banhmiluamachvoimutdauvabohatlanh.jpg", [banhmiluamach, mutdau, bohatlanh]);
+    const comtrangvoithitganuong = new MonAn("cơm trắng với thịt gà nướng(loại bỏ da) và rau xanh", "menu_img/comtrangvoithitganuong.jpg", [com, thitga, rauxanh], "https://youtu.be/jzY0G2ziPIs?si=QyJJNqeSSNalqIn-");
+    const banhmisandwichhapvoihanhtayvahatlanh = new MonAn("bánh mì sandwich hấp với hành tây và hạt lanh", "menu_img/banhmisandwichhapvoihanhtayvahatlanh.jpeg", [banhmi, hanhtay, hatlanh]);
+    const cahoinuongvoiluamachvarauxanh = new MonAn("cá hồi nướng với lúa mạch và rau xanh", "menu_img/cahoinuongvoiluamachvarauxanh.jpg", [cahoi, luamach, rauxanh], "https://youtu.be/0JOfwDLuTEU?si=GxUPZmlZMYYjXFbC");
 
     //cập nhật số lượng
     banhmiluamachvoimutdauvabohatlanh.capNhatSoLuongNguyenLieu("bánh mì lúa mạch", Math.round((11.1 * Calo / 100) / 2.591));
@@ -233,23 +233,20 @@ window.addEventListener('load', ()=> {
     const dauphu = new NguyenLieu("đậu phụ", 0, "gram");
   
     //món ăn
-    const coman = new MonAn("cơm", "sau này sẽ là địa chỉ của hình món ăn :v", [com], "https://youtu.be/QJZUwiJhKZ0?si=2FG0LqTBvA2j97Zi")
-    const xoidauxanh = new MonAn("Xôi đậu xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [gaonep, dauxanh, giolua], "https://youtu.be/w2CHbo08N9E?si=9UIfljiTL-1l96SF");
-    const comthitgarang = new MonAn("cơm thịt gà rang", "sau này sẽ là địa chỉ của hình món ăn :v", [com, thitgata], "https://youtu.be/T34SqjyEe2A?si=WSlm7XduhwFdfWqM");
-    const muopdangluoc = new MonAn("mướp đắng luộc", "sau này sẽ là địa chỉ của hình món ăn :v", [muopdang], "https://youtu.be/S3ChgcwtU_k?si=9u54QbxmkKXGiOx3");
-    const cakho = new MonAn("cá kho", "sau này sẽ là địa chỉ của hình món ăn :v", [com, catroi], "https://youtu.be/bjuDaFy6VkU?si=3iPocF-QlqQHDGs_");
-    const mangxao = new MonAn("măng xào", "sau này sẽ là địa chỉ của hình món ăn :v", [mangtuoi, dauan], "https://youtu.be/OsH8a8A2g-k?si=EuMvUsrNazFNWPkk");
-    const dauphuluoc = new MonAn("đậu phụ luộc", "sau này sẽ là địa chỉ của hình món ăn :v", [dauphu], "https://youtu.be/0sZARyRmgZM?si=tweCwn6Fh478MRoM");
-    const quatuoi = new MonAn("thanhlong", "sau này sẽ là địa chỉ của hình món ăn :v", [thanhlong]);
-    const sua = new MonAn("sữa đậu nành", "sau này sẽ là địa chỉ của hình món ăn :v", [suadaunanh]);
+    const coman = new MonAn("cơm", "menu_img/com.jpg", [com], "https://youtu.be/QJZUwiJhKZ0?si=2FG0LqTBvA2j97Zi")
+    const xoidauxanh = new MonAn("Xôi đậu xanh", "menu_img/xoidauxanh.jpg", [gaonep, dauxanh, giolua], "https://youtu.be/w2CHbo08N9E?si=9UIfljiTL-1l96SF");
+    const comthitgarang = new MonAn("cơm thịt gà rang", "menu_img/comthitgarang.jpg", [com, thitgata], "https://youtu.be/T34SqjyEe2A?si=WSlm7XduhwFdfWqM");
+    const muopdangluoc = new MonAn("mướp đắng luộc", "menu_img/muopdangluoc.jpg", [muopdang], "https://youtu.be/S3ChgcwtU_k?si=9u54QbxmkKXGiOx3");
+    const cakho = new MonAn("cá kho", "menu_img/cakho.jpg", [com, catroi], "https://youtu.be/bjuDaFy6VkU?si=3iPocF-QlqQHDGs_");
+    const mangxao = new MonAn("măng xào", "menu_img/mangxao.jpg", [mangtuoi, dauan], "https://youtu.be/OsH8a8A2g-k?si=EuMvUsrNazFNWPkk");
+    const dauphuluoc = new MonAn("đậu phụ luộc", "menu_img/dauphuluoc.jpg", [dauphu], "https://youtu.be/0sZARyRmgZM?si=tweCwn6Fh478MRoM");
+    const quatuoi = new MonAn("thanhlong", "menu_img/thanhlong.jpg", [thanhlong]);
+    const sua = new MonAn("sữa đậu nành", "menu_img/suadaunanh.jpg", [suadaunanh]);
 
     //bữa ăn
-    const sang = new meal("7h", [xoidauxanh]);
-    const sangphu = new meal("9h", [quatuoi]);
-    const trua = new meal("11h", [comthitgarang, muopdangluoc]);
-    const truaphu = new meal("14h", [sua]);
-    const chieu = new meal("17h", [coman, cakho, mangxao]);
-    const chieuphu = new meal("20h", [dauphuluoc]);
+    const sang = new meal("7h", [xoidauxanh, quatuoi]);
+    const trua = new meal("11h", [comthitgarang, muopdangluoc, sua]);
+    const chieu = new meal("17h", [coman, cakho, mangxao, dauphuluoc]);
 
     //cập nhật số lượng
     xoidauxanh.capNhatSoLuongNguyenLieu("gạo nếp", Math.round((12 * Calo / 100) / 0.97));
@@ -267,7 +264,7 @@ window.addEventListener('load', ()=> {
     dauphuluoc.capNhatSoLuongNguyenLieu("đậu phụ", Math.round((5 * Calo / 100) / 0.76));
 
     //cập nhật thực đơn
-    thucDon1 = [sang, sangphu, trua, truaphu, chieu, chieuphu];
+    thucDon1 = [sang, trua, chieu];
   }
 
   
@@ -299,9 +296,50 @@ window.addEventListener('load', ()=> {
     else if(Sick == "caohuyetap"){
         chaud(Calo);
     }
-    else if(Sick == "binhthuong"){
+    // else if(Sick == "binhthuong"){
 
+    // }
+    if(document.getElementById("menu") != null) {
+      if(localStorage.getItem("BUOI") == "sang")
+        buoi = 0;
+      else if(localStorage.getItem("BUOI") == "trua")
+        buoi = 1;
+      else 
+        buoi = 2;
+      let ulElement = document.getElementById("menu");
+      for(i=0; i<thucDon1[buoi].monAn.length; i++) {
+        let liElement = document.createElement("li");
+        let divElement = document.createElement("div");
+        let hElement = document.createElement("h2");
+        let inputElement = document.createElement("input");
+        let imgElement = document.createElement("img");
+        liElement.classList = "card";
+        divElement.classList = "img";
+        imgElement.src = thucDon1[buoi].monAn[i].moTa;
+        imgElement.alt = "img";
+        imgElement.draggable = "false";
+        inputElement.type = "submit";
+        inputElement.value = "xem nguyên liệu";
+        hElement.textContent = thucDon1[buoi].monAn[i].ten;
+        divElement.appendChild(imgElement);
+        liElement.appendChild(divElement);
+        liElement.appendChild(hElement);
+        liElement.appendChild(inputElement);
+        ulElement.appendChild(liElement);
+      }
     }
-    if(document.getElementById("ten_thucdon") != null)
-      document.getElementById("ten_thucdon").innerHTML = thucDon1[0].monAn[0].nguyenLieu[0].soLuong + " " + thucDon1[0].monAn[0].nguyenLieu[0].donVi;
+    // if(document.getElementById("ten_thucdon") != null)
+    //   document.getElementById("ten_thucdon").innerHTML = thucDon1[0].monAn[0].nguyenLieu[0].soLuong + " " + thucDon1[0].monAn[0].nguyenLieu[0].donVi;
+  }
+
+  function sang() {
+    localStorage.setItem("BUOI", "sang");
+  }
+
+  function trua() {
+    localStorage.setItem("BUOI", "trua");
+  }
+
+  function chieu() {
+    localStorage.setItem("BUOI", "chieu");
   }

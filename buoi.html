@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html dir="ltr">
+    <head>
+        <meta charset ="utf-8">
+        <title>Health web</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="style_home.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
+    </head>
+    <body>
+        <style>
+            h2 {
+                text-align: center;
+            }
+        </style>
+        <nav>
+           <label class="logo"><a href="index.html"><b><b style="font-size: 45px;">N</b>UTRI<b style="font-size: 45px;">X</b>CEL</b></a></label> 
+            <ul>
+                <li><a href="Menu.html">Menu</a></li>
+                <li><a href="BMI.html" >BMI</a></li>
+                <li><a href="More.html" >More</a></li>
+                <li><a href="setting.html" >Setting</a></li>  
+            </ul>
+            <div class="welcome_frame">
+                <p class="hello_name">HELLO <input id="fullname" ></p>
+                <script> document.getElementById('fullname').value = localStorage.getItem('NAME')</script>
+            </div>
+        </nav>
+        <h3></h3>
+        <!-- menu slider  -->
+        <div class="slider_body">
+        <div class="wrapper">
+            <i id="left" class="fa-solid fa-angles-left"></i>
+             <ul id = "menu" class="carousel">
+                <!-- <li class="card"> -->
+                    <!-- <div class="img"> <img src="menu_img/sang.png" alt="img" draggable="false"> </div>
+                    <h2></h2>
+                    <input type="submit" value="Buổi sáng"> -->
+                <!-- </li> -->
+             </ul>
+             <i id="right"  class="fa-solid fa-angles-right"></i>
+        </div>
+    </div>
+    <script src="infor.js"></script>
+    <script src="script2.js"></script>
+    </body>
+</html> 
