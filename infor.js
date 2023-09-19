@@ -233,13 +233,13 @@ window.addEventListener('load', ()=> {
     const dauphu = new NguyenLieu("đậu phụ", 0, "gram");
   
     //món ăn
-    const coman = new MonAn("cơm", "menu_img/com.jpg", [com], "https://youtu.be/QJZUwiJhKZ0?si=2FG0LqTBvA2j97Zi")
-    const xoidauxanh = new MonAn("Xôi đậu xanh", "menu_img/xoidauxanh.jpg", [gaonep, dauxanh, giolua], "https://youtu.be/w2CHbo08N9E?si=9UIfljiTL-1l96SF");
-    const comthitgarang = new MonAn("cơm thịt gà rang", "menu_img/comthitgarang.jpg", [com, thitgata], "https://youtu.be/T34SqjyEe2A?si=WSlm7XduhwFdfWqM");
-    const muopdangluoc = new MonAn("mướp đắng luộc", "menu_img/muopdangluoc.jpg", [muopdang], "https://youtu.be/S3ChgcwtU_k?si=9u54QbxmkKXGiOx3");
-    const cakho = new MonAn("cá kho", "menu_img/cakho.jpg", [com, catroi], "https://youtu.be/bjuDaFy6VkU?si=3iPocF-QlqQHDGs_");
-    const mangxao = new MonAn("măng xào", "menu_img/mangxao.jpg", [mangtuoi, dauan], "https://youtu.be/OsH8a8A2g-k?si=EuMvUsrNazFNWPkk");
-    const dauphuluoc = new MonAn("đậu phụ luộc", "menu_img/dauphuluoc.jpg", [dauphu], "https://youtu.be/0sZARyRmgZM?si=tweCwn6Fh478MRoM");
+    const coman = new MonAn("cơm", "menu_img/com.jpg", [com], "https://www.youtube.com/embed/QJZUwiJhKZ0?si=SZ4Xn1WNYqWB8AxW")
+    const xoidauxanh = new MonAn("Xôi đậu xanh", "menu_img/xoidauxanh.jpg", [gaonep, dauxanh, giolua], "https://www.youtube.com/embed/w2CHbo08N9E?si=lgTC8W9nYqCwYwBS");
+    const comthitgarang = new MonAn("cơm thịt gà rang", "menu_img/comthitgarang.jpg", [com, thitgata], "https://www.youtube.com/embed/T34SqjyEe2A?si=LsPcPbiAwkQgJQsb");
+    const muopdangluoc = new MonAn("mướp đắng luộc", "menu_img/muopdangluoc.jpg", [muopdang], "https://www.youtube.com/embed/S3ChgcwtU_k?si=uKrA1ruKRQ8mP_lk");
+    const cakho = new MonAn("cá kho", "menu_img/cakho.jpg", [com, catroi], "https://www.youtube.com/embed/bjuDaFy6VkU?si=B7XK0_8Ad9urH5P2");
+    const mangxao = new MonAn("măng xào", "menu_img/mangxao.jpg", [mangtuoi, dauan], "https://www.youtube.com/embed/OsH8a8A2g-k?si=s2L54ncc61TEgNsx");
+    const dauphuluoc = new MonAn("đậu phụ luộc", "menu_img/dauphuluoc.jpg", [dauphu], "https://www.youtube.com/embed/0sZARyRmgZM?si=-5FcxQU2N8mVpkCx");
     const quatuoi = new MonAn("thanhlong", "menu_img/thanhlong.jpg", [thanhlong]);
     const sua = new MonAn("sữa đậu nành", "menu_img/suadaunanh.jpg", [suadaunanh]);
 
@@ -300,12 +300,7 @@ window.addEventListener('load', ()=> {
 
     // }
     if(document.getElementById("menu") != null) {
-      if(localStorage.getItem("BUOI") == "sang")
-        buoi = 0;
-      else if(localStorage.getItem("BUOI") == "trua")
-        buoi = 1;
-      else 
-        buoi = 2;
+      buoi = localStorage.getItem("BUOI");
       let ulElement = document.getElementById("menu");
       for(i=0; i<thucDon1[buoi].monAn.length; i++) {
         let liElement = document.createElement("li");
@@ -313,7 +308,13 @@ window.addEventListener('load', ()=> {
         let hElement = document.createElement("h2");
         let inputElement = document.createElement("input");
         let imgElement = document.createElement("img");
+        let aElement = document.createElement("a");
+        aElement.href = "monan.html";
         liElement.classList = "card";
+        liElement.id_monan = i;
+        liElement.addEventListener('click', function() {
+          localStorage.setItem("MonAn", liElement.id_monan);
+        });
         divElement.classList = "img";
         imgElement.src = thucDon1[buoi].monAn[i].moTa;
         imgElement.alt = "img";
@@ -325,21 +326,55 @@ window.addEventListener('load', ()=> {
         liElement.appendChild(divElement);
         liElement.appendChild(hElement);
         liElement.appendChild(inputElement);
-        ulElement.appendChild(liElement);
+        aElement.appendChild(liElement);
+        ulElement.appendChild(aElement);
       }
     }
-    // if(document.getElementById("ten_thucdon") != null)
-    //   document.getElementById("ten_thucdon").innerHTML = thucDon1[0].monAn[0].nguyenLieu[0].soLuong + " " + thucDon1[0].monAn[0].nguyenLieu[0].donVi;
+
+    if(document.getElementById("yt_vd") != null) {
+      buoi = localStorage.getItem("BUOI");
+      monan = localStorage.getItem("MonAn");
+      ten = document.getElementById("ten_monan");
+      ten.textContent = thucDon1[buoi].monAn[monan].ten;
+      tb = document.getElementById("bang");
+      for(i = 0; i<thucDon1[buoi].monAn[monan].nguyenLieu.length; i++) {
+        console.log(thucDon1[buoi].monAn[monan].nguyenLieu[i].ten);
+        trE = document.createElement("tr");
+        tdE1 = document.createElement("td");
+        tdE2 = document.createElement("td");
+        tdE1.textContent = thucDon1[buoi].monAn[monan].nguyenLieu[i].ten;
+        tdE2.textContent = thucDon1[buoi].monAn[monan].nguyenLieu[i].soLuong + " " + thucDon1[buoi].monAn[monan].nguyenLieu[i].donVi;
+        trE.appendChild(tdE1);
+        trE.appendChild(tdE2);
+        tb.appendChild(trE);
+      }
+      hinh = document.getElementById("hinh");
+      hinh.src = thucDon1[buoi].monAn[monan].moTa;
+      if(thucDon1[buoi].monAn[monan].hd != null){
+        vd = document.getElementById("yt_vd");
+        ifr = document.createElement("iframe");
+        ifr.width = "560";
+        ifr.height = "315";
+        console.log(thucDon1[buoi].monAn[monan].hd);
+        ifr.src = thucDon1[buoi].monAn[monan].hd;
+        ifr.title = "YouTube video player";
+        ifr.frameborder = "0";
+        ifr.allow = "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+        ifr.allowfullscreen = true;
+        vd.appendChild(ifr);
+      }
+    }
   }
 
   function sang() {
-    localStorage.setItem("BUOI", "sang");
+    localStorage.setItem("BUOI", 0);
   }
 
   function trua() {
-    localStorage.setItem("BUOI", "trua");
+    localStorage.setItem("BUOI", 1);
   }
 
   function chieu() {
-    localStorage.setItem("BUOI", "chieu");
+    localStorage.setItem("BUOI", 2);
   }
+

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html dir="ltr">
+    <head>
+        <meta charset ="utf-8">
+        <title>Health web</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="stylesheet" href="style_home.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+    
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 10px 20px;
+            }
+    
+            .logo {
+                font-size: 24px;
+                font-weight: bold;
+            }
+    
+            ul {
+                list-style: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+            }
+    
+            li {
+                margin-right: 20px;
+            }
+    
+            a {
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+    
+            h1 {
+                text-align: center;
+                margin-top: 20px;
+                font-family: 'Playfair Display SC', serif;
+                font-size: 36px;
+            }
+    
+            .container {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                border-radius: 5px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                padding: 20px;
+            }
+    
+            table {
+                width: 100%;
+                border-collapse: collapse;
+            }
+    
+            th, td {
+                padding: 15px;
+                text-align: left;
+            }
+    
+            th {
+                background-color: #333;
+                color: white;
+            }
+    
+            tr:nth-child(even) {
+                background-color: #f2f2f2;
+            }
+    
+            tr:hover {
+                background-color: #ddd;
+            }
+    
+            .video-link {
+                text-decoration: none;
+            }
+    
+            .video-link:hover {
+                text-decoration: underline;
+            }
+    
+            .image-container {
+                max-width: 50%;
+                max-height: 400px;
+                text-align: center;
+            }
+    
+            img {
+                max-width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            }
+    
+            h2 {
+                text-align: center;
+                font-family: 'Playfair Display SC', serif;
+                font-size: 28px;
+            }
+    
+            iframe {
+                width: 100%;
+                max-width: 800px;
+            }
+    
+            .table-container {
+                max-width: 50%;
+                margin-right: 20px;
+                width: 50%;
+                overflow: auto; /* Add a scrollbar when the table exceeds the container height */
+                max-height: 400px; 
+                /* Set the maximum height for the container */
+            }
+
+            center {
+                width: 100%;
+                height: 50%;
+            }
+        </style>
+    </head>
+    <body>
+        <style>
+            h2 {
+                text-align: center;
+            }
+        </style>
+        <nav>
+           <label class="logo"><a href="index.html"><b><b style="font-size: 45px;">N</b>UTRI<b style="font-size: 45px;">X</b>CEL</b></a></label> 
+            <ul>
+                <li><a href="Menu.html">Menu</a></li>
+                <li><a href="BMI.html" >BMI</a></li>
+                <li><a href="More.html" >More</a></li>
+                <li><a href="setting.html" >Setting</a></li>  
+            </ul>
+            <div class="welcome_frame">
+                <p class="hello_name">HELLO <input id="fullname" ></p>
+                <script> document.getElementById('fullname').value = localStorage.getItem('NAME')</script>
+            </div>
+        </nav>
+        <div class="sth">
+            <h1 id = "ten_monan"></h1>
+            <div class="container">
+                <div class="table-container">
+                    <table id="bang">
+                        <tr>
+                            <th>Nguyên liệu</th>
+                            <th>Số lượng</th>
+                        </tr>
+                    </table>
+                </div>
+                <div class="image-container">
+                    <img id="hinh" src="">
+                </div>
+            </div>
+            <h2>Cách làm:</h2>
+            <center id="yt_vd"></center>
+        </div>
+    <script src="infor.js"></script>
+    </body>
+</html> 

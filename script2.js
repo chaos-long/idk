@@ -13,9 +13,9 @@ let isDragging = false, startX, startScrollLeft, timeoutId;
 // });
 
 
-carouselChildrens.slice(0, cardPerView).forEach(card => {
-    carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-});
+// carouselChildrens.slice(0, cardPerView).forEach(card => {
+//     carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+// });
 
 arrowBtns.forEach(btn => {
     btn.addEventListener("click", () => {
