@@ -111,6 +111,7 @@ carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
 
 carouselChildrens.slice(0, cardPerView).forEach(card => {
     carousel.insertAdjacentHTML("beforeend", card.outerHTML);
+
 });
 
 arrowBtns.forEach(btn => {

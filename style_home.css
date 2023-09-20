@@ -112,7 +112,7 @@ ul li a:hover, a:active{
     box-shadow: 0 0px 128px 0 rgba(0,0,0,0.1),
                 0 32px 64px -48px rgba(0,0,0, 0.5);
     transition: all 0.1s ease;
-    z-index: 2;
+    z-index: 4;
 }
 .chatbot header{
     font-family: 'Playfair Display SC',serif;
@@ -224,6 +224,7 @@ ul li a:hover, a:active{
     background: #264E49;
     border-radius: 50%;
     transition: all 0.2s ease ;
+    z-index: 4;
 }
 .show-chatbot .chatbot-toggler{
     transform: rotate(90deg);
@@ -325,7 +326,7 @@ ul li a:hover, a:active{
     align-items: center;
     justify-content: center;
     padding: 0 35px;
-    min-height: 100vh;
+    min-height: 10vh;
     z-index: 1;
 }
 .wrapper{
@@ -395,6 +396,7 @@ ul li a:hover, a:active{
     display: flex;
     cursor: pointer;
     padding-bottom: 15px;
+    margin-bottom: 105px;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -442,4 +444,18 @@ ul li a:hover, a:active{
     .wrapper .carousel{
         grid-auto-columns: 100%;
     }   
+}
+
+
+.textcls{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Noto Serif', serif;    
+    margin: 100px 0px;
+    color: #264E49;
+    color: #37545c;
+    width: 100%;
+    position: relative;
+    padding: 0 20%;
 }
