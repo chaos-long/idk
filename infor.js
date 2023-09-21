@@ -275,7 +275,7 @@ window.addEventListener('load', ()=> {
     const Gender = localStorage.getItem('GENDER');
     const Sick = localStorage.getItem('SICK');
     const Jobs = localStorage.getItem('JOBS');
-    var BMR, Calo;
+    var BMR, Calo, BMI;
     if(Gender == "MALE")
         BMR = 88.362 + (13.397 * Wght) + (4.799 * Hght) - (5.677 * Ages);
     else
@@ -286,6 +286,11 @@ window.addEventListener('load', ()=> {
         Calo = BMR * 1.55;
     else
         Calo = BMR * 1.725;
+    BMI = Wght / (Hght*Hght);
+    if(BMI < 18.5)
+      Calo = Calo + 100;
+    else if(BMI >= 25)
+      Calo = Calo - 100;
     
     if(Sick == "daithaoduong"){
         dtdud(Calo);
@@ -364,6 +369,63 @@ window.addEventListener('load', ()=> {
         vd.appendChild(ifr);
       }
     }
+    if(document.getElementById("text") != null) {
+      a = document.getElementById("text");
+      a.textContent = "";
+      if(localStorage.getItem('SICK') == null) {
+        a.textContent = "Hãy vào setting điền thông tin để xây dựng thực đơn."
+      }
+      else {
+        benh = localStorage.getItem('SICK');
+        if(benh == "daithaoduong") {
+          a.innerHTML += "Dinh dưỡng đóng vai trò quan trọng trong quản lý đái tháo đường và có thể giúp kiểm soát mức đường huyết của bạn. Dưới đây là một số lời khuyên về ăn uống và dinh dưỡng: <br>";
+          a.innerHTML += "<br> + Tuân thủ kế hoạch ăn uống: Thực hiện theo kế hoạch ăn uống hàng ngày và không bỏ bữa. Chia bữa ăn thành các bữa nhỏ để kiểm soát đường huyết trong suốt cả ngày. <br>";
+          a.innerHTML += "<br> + Cân đối dinh dưỡng: Ưu tiên thức ăn giàu chất xơ như rau xanh, quả, hạt, ngũ cốc nguyên hạt. Giảm tiêu thụ thức ăn nhanh chóng, thức ăn chứa nhiều đường và thức ăn chứa nhiều chất béo bão hòa. <br>"
+          a.innerHTML += "<br> + Kiểm soát lượng carbohydrate: Tìm hiểu về số lượng carbohydrate trong các loại thức ăn và thức uống và hạn chế lượng carbohydrate hàng ngày. Ưu tiên lựa chọn carbohydrate phức hợp (như lúa mạch, lúa mạch nguyên hạt) thay vì carbohydrate đơn giản (đường, mì trắng). <br> <br> + Theo dõi cỡ khẩu phần: Hạn chế ăn quá nhiều một lần, đặc biệt đối với carbohydrate. Theo dõi cỡ khẩu phần và tuân thủ việc ăn theo đúng chỉ định của bác sĩ hoặc chuyên gia dinh dưỡng. <br> <br> + Quản lý trọng lượng cơ thể: Đối với những người bị thừa cân hoặc béo phì, giảm cân có thể giúp cải thiện quản lý đường huyết. Hỏi ý kiến bác sĩ hoặc chuyên gia dinh dưỡng về kế hoạch giảm cân phù hợp. <br> <br> + Kiểm soát đường huyết: Đo mức đường huyết đều đặn theo hướng dẫn của bác sĩ. Tuân thủ toa thuốc và/hoặc tiêm insulin nếu được chỉ định. <br> <br> + Tránh uống rượu và hút thuốc lá: Rượu và thuốc lá có thể ảnh hưởng đến mức đường huyết và sức kháng của bạn, vì vậy nên tránh chúng hoàn toàn hoặc giảm bớt sử dụng. <br>"
+          if(BMI < 18.5)
+            a.innerHTML += "<br> Bạn hiện tại đang khá gầy, nên thực đơn hằng ngày lượng calo sẽ tăng thêm khoảng 100 đến khi nào cân nặng có đạt mức chuẩn.";
+          else
+          if(BMI >= 25)
+            a.innerHTML += "<br> Bạn hiện tại đang thừa cân, nên thực đơn hằng ngày lượng calo sẽ giảm khoảng 100 đến khi cân nặng của bạn đạt mức chuẩn.";
+          else 
+            a.innerHTML += "<br> Cân nặng hiện tại của bạn đang ở mức chuẩn nên thực đơn của bạn lượng calo sẽ ở mức bình thường."
+        } 
+
+        if(benh == "suythanman") {
+          a.innerHTML += "Việc quản lý dinh dưỡng đúng cách là rất quan trọng đối với người bị suy thận mạn. Dưới đây là một số lời khuyên về ăn uống và dinh dưỡng cho bạn: <br> <br> + Kiểm soát lượng protein: Người bị suy thận mạn thường cần giới hạn lượng protein trong khẩu phần hàng ngày. Protein quá nhiều có thể gây gia tăng học môn thải độc tố do suy thận, gây áp lực cho thận và tăng nguy cơ các vấn đề về thận. Hãy thảo luận với bác sĩ hoặc chuyên gia dinh dưỡng để xác định lượng protein phù hợp cho bạn. <br> <br> + Hạn chế natri: Hạn chế lượng natri (muối) trong khẩu phần ăn. Muối có thể gây tăng huyết áp và gây căng thẳng cho thận. Tránh thức ăn chế biến có nhiều muối như thực phẩm đóng hộp và đồ ăn nhanh. <br> <br> + Điều chỉnh lượng kali: Một số người bị CKD cần điều chỉnh lượng kali trong khẩu phần ăn do thận không thể loại bỏ kali một cách hiệu quả. Thức ăn giàu kali bao gồm chuối, cam, khoai lang, và cà chua. Hãy thảo luận với bác sĩ hoặc chuyên gia dinh dưỡng để biết bạn cần điều chỉnh mức kali như thế nào. <br> <br> + Uống đủ nước: Uống đủ nước để duy trì sự cân bằng nước trong cơ thể. Tuy nhiên, hãy theo dõi sự tăng của lượng nước nếu bạn có yếu tố nguy cơ sưng. <br> <br> + Hạn chế phosphat: Hạn chế thức ăn và đồ uống có chứa nhiều phosphat, bởi vì suy thận mạn thường dẫn đến tăng nồng độ phosphat trong máu. <br> <br> + Theo dõi đường huyết: Nếu bạn có suy thận mạn do tiểu đường (CKD do tiểu đường), hãy kiểm soát đường huyết cẩn thận bằng cách tuân thủ kế hoạch ăn uống và thay đổi dựa trên hướng dẫn của bác sĩ. <br> <br> + Chất béo và carbohydrate: Theo dõi lượng chất béo và carbohydrate bạn tiêu thụ, đặc biệt là nếu bạn cần kiểm soát cân nặng hoặc có vấn đề về đường huyết. <br>";
+          if(BMI < 18.5)
+            a.innerHTML += "<br> Bạn hiện tại đang khá gầy, nên thực đơn hằng ngày lượng calo sẽ tăng thêm khoảng 100 đến khi nào cân nặng có đạt mức chuẩn.";
+          else
+          if(BMI >= 25)
+            a.innerHTML += "<br> Bạn hiện tại đang thừa cân, nên thực đơn hằng ngày lượng calo sẽ giảm khoảng 100 đến khi cân nặng của bạn đạt mức chuẩn.";
+          else 
+            a.innerHTML += "<br> Cân nặng hiện tại của bạn đang ở mức chuẩn nên thực đơn của bạn lượng calo sẽ ở mức bình thường."
+        } 
+
+        if(benh == "caohuyetap") {
+          a.innerHTML += "Ăn uống và dinh dưỡng có vai trò quan trọng trong việc quản lý cao huyết áp. Dưới đây là một số lời khuyên về ăn uống và dinh dưỡng cho bạn: <br> <br> + Hạn chế muối (natri): Hạn chế lượng muối trong khẩu phần ăn. Muối là một trong những yếu tố chính gây tăng huyết áp.Tránh thức ăn chế biến có nhiều muối như thực phẩm đóng hộp, thức ăn nhanh, và gia vị chứa natri. <br> <br> + Tăng cường kali: Kali có thể giúp làm giảm áp lực máu. Thực phẩm giàu kali bao gồm chuối, cam, khoai lang, cà chua, và nhiều loại rau xanh.Tuy nhiên, nên thảo luận với bác sĩ trước khi thay đổi lượng kali trong khẩu phần ăn, đặc biệt nếu bạn có vấn đề về chức năng thận. <br> <br> + Cân đối dinh dưỡng: Theo một chế độ ăn uống cân đối, bao gồm nhiều rau xanh, quả, ngũ cốc nguyên hạt, protein từ cá, gà, và thịt gia cầm không mỡ.Hạn chế tiêu thụ thịt đỏ và thực phẩm chứa chất béo bão hòa. <br> <br> + Kiểm soát lượng đường: Hạn chế tiêu thụ đường và thức ăn có nhiều đường, bởi vì cường độ đường trong máu có thể ảnh hưởng đến huyết áp. Hạn chế đồ uống có cồn: Uống cồn có thể tăng huyết áp, vì vậy nên hạn chế tiêu thụ nếu bạn có cao huyết áp hoặc tiêu thụ một cách có kiểm soát. Giảm cân nếu cần: Nếu bạn có thừa cân hoặc béo phì, giảm cân có thể giúp cải thiện áp lực máu. Theo dõi lượng caffeine: Đôi khi, caffeine từ cà phê, trà, và nước ngọt có chứa caffeine có thể tăng huyết áp. Hãy thảo luận với bác sĩ về việc giới hạn caffeine trong khẩu phần ăn uống của bạn. <br> <br> + Theo dõi huyết áp: Theo dõi huyết áp của bạn theo hướng dẫn của bác sĩ. <br>";
+          if(BMI < 18.5)
+            a.innerHTML += "<br> Bạn hiện tại đang khá gầy, nên thực đơn hằng ngày lượng calo sẽ tăng thêm khoảng 100 đến khi nào cân nặng có đạt mức chuẩn.";
+          else
+          if(BMI >= 25)
+            a.innerHTML += "<br> Bạn hiện tại đang thừa cân, nên thực đơn hằng ngày lượng calo sẽ giảm khoảng 100 đến khi cân nặng của bạn đạt mức chuẩn.";
+          else 
+            a.innerHTML += "<br> Cân nặng hiện tại của bạn đang ở mức chuẩn nên thực đơn của bạn lượng calo sẽ ở mức bình thường."
+        } 
+
+        if(benh == "binhthuong") {
+          a.innerHTML += "Dinh dưỡng là một phần quan trọng của sức khỏe và cảm thấy tốt trong cuộc sống hàng ngày. Dưới đây là một số lời khuyên về ăn uống và dinh dưỡng cho bạn: <br> <br> + Cân đối dinh dưỡng: Hãy ăn đa dạng các loại thực phẩm, bao gồm rau xanh, quả, ngũ cốc nguyên hạt, protein từ thịt, cá, đậu hủ, và hạt. Hạn chế thức ăn chứa nhiều đường, chất béo bão hòa, và muối. <br> <br> + Kiểm soát khẩu phần: Theo dõi cỡ khẩu phần để đảm bảo bạn ăn đúng lượng. Hạn chế tiêu thụ thức ăn chứa nhiều calorie mà không cung cấp nhiều dinh dưỡng, như thức ăn nhanh và đồ ngọt. <br> <br> + Uống đủ nước: Uống đủ nước trong suốt ngày để duy trì sự cân bằng nước trong cơ thể. Nước là lựa chọn tốt nhất, nhưng bạn cũng có thể uống nước trái cây tự nhiên hoặc nước chanh để thêm hương vị. <br> <br> + Ăn thường xuyên: Hãy ăn ít nhất 3 bữa chính mỗi ngày và bổ sung bằng các bữa ăn nhẹ nếu cần thiết. Tránh bỏ bữa, vì điều này có thể dẫn đến tăng cảm giác thèm ăn và tiêu thụ nhiều calorie hơn vào các bữa chính sau đó. Hạn chế thức ăn chế biến: Ưu tiên thức ăn tươi ngon và ít thức ăn chế biến như thực phẩm đóng hộp và đồ ăn nhanh. Thức ăn tươi ngon thường cung cấp nhiều dinh dưỡng hơn. <br> <br> + Theo dõi lượng caffeine và alcohol: Uống caffeine và alcohol một cách có kiểm soát. Một lượng lớn caffeine có thể gây loạn nhịp tim và lo lắng, trong khi alcohol có thể gây tác động xấu đến gan và não. <br> <br> + Một lối sống hoạt động: Kết hợp chế độ ăn uống lành mạnh với việc tập thể dục thường xuyên. Hoạt động thể dục giúp duy trì cân nặng, cải thiện sức khỏe tim mạch và tăng cường tinh thần. <br> <br> + Theo dõi cân nặng: Theo dõi cân nặng của bạn và thực hiện điều chỉnh khi cần thiết để duy trì trạng thái cân đối. <br>";
+          if(BMI < 18.5)
+            a.innerHTML += "<br> Bạn hiện tại đang khá gầy, nên thực đơn hằng ngày lượng calo sẽ tăng thêm khoảng 100 đến khi nào cân nặng có đạt mức chuẩn.";
+          else
+          if(BMI >= 25)
+            a.innerHTML += "<br> Bạn hiện tại đang thừa cân, nên thực đơn hằng ngày lượng calo sẽ giảm khoảng 100 đến khi cân nặng của bạn đạt mức chuẩn.";
+          else 
+            a.innerHTML += "<br> Cân nặng hiện tại của bạn đang ở mức chuẩn nên thực đơn của bạn lượng calo sẽ ở mức bình thường."
+        } 
+      }
+    }
+
   }
 
   function sang() {

@@ -1,32 +1,12 @@
 const wrapper = document.querySelector(".wrapper");
 const carousel = document.querySelector(".carousel");
 const arrowBtns = document.querySelectorAll(".wrapper i");
-// const firstCardWidth = carousel.querySelector(".card").offsetWidth;
-const CarouselWidth = carousel.querySelector(".wrapper").offsetWidth;
+const firstCardWidth = carousel.querySelector(".card").offsetWidth;
 const carouselChildrens = [...carousel.children];
 
 let isDragging = false, startX, startScrollLeft, timeoutId;
 
-// if(localStorage.getItem("BUOI") == "sang")
-//         buoi = 0;
-//       else if(localStorage.getItem("BUOI") == "trua")
-//         buoi = 1;
-//       else 
-//         buoi = 2;
-// if (thucDon1[buoi].monAn.length >= 2){
-//     // carousel.style.grid-auto-columns == Math.round(( CarouselWidth/ 2) - 9);
-//     document.getElementById("menu").style.justifyContent = "center";
-// }
-
-// let cardPerView = Math.round(carousel.offsetWidth/ firstCardWidth);
-// carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
-//     carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
-// });
-
-
-// carouselChildrens.slice(0, cardPerView).forEach(card => {
-//     carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-// });
+// let cardPe2
 
 arrowBtns.forEach(btn => {
     btn.addEventListener("click", () => {

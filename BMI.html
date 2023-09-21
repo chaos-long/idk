@@ -5,49 +5,67 @@
         <title>Health web</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="style_home.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@900&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Roboto+Serif:wght@200&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-        <script src="script.js" defer></script>
+        <style> 
+            .container {
+                background-color: #fff;
+                border-radius: 8px;
+                box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+                padding: 20px;
+                text-align: center;
+            }
+
+            .person-info {
+                text-align: left;
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+
+            .info-label {
+                font-weight: bold;
+                margin: 5px 0;
+                font-size: 30px;
+            }
+
+            .info-value {
+                margin: 5px 0;
+                font-size: 35px;
+            }
+        </style>
     </head>
     <body>
         <nav>
-           <label class="logo"><b>NutriXcel</b></label> 
+           <label class="logo"><a href="index.html"><b><b style="font-size: 45px;">N</b>UTRI<b style="font-size: 45px;">X</b>CEL</b></a></label> 
             <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Menu.html">Menu</a></li>
+                <!-- <li><a href="Menu.html">Menu</a></li> -->
                 <li><a href="BMI.html" >BMI</a></li>
+                <li><a href="setting.html" >Setting</a></li>  
                 <li><a href="More.html" >More</a></li>
             </ul>
-            <a href="#" class="hello_name">Hello</a>
+            <div class="welcome_frame">
+                <p class="hello_name">HELLO <input id="fullname" ></p>
+                <script> document.getElementById('fullname').value = localStorage.getItem('NAME')</script>
+            </div>
+
             <input type="checkbox" id="check">
             <div class="checkbtn">
                 <i class="fa-solid fa-bars-staggered"></i>
             </div>
              <div class="dropdown_menu">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Menu.html">Menu</a></li>
-                <li><a href="BMI.html" >BMI</a></li>
-                <li><a href="More.html" >More</a></li>    
+                <!-- <li><a href="Menu.html">Menu</a></li> -->
+                <li><a href="BMI.html" >BMI</a></li> 
+                <li><a href="setting.html">Setting</a></li>  
+                <li><a href="More.html" >More</a></li> 
             </div>
         </nav>
-        <script>
-            const checkbtn = document.querySelector('.checkbtn')
-            const checkbtnIcon = document.querySelector('.checkbtn i')
-            const dropDownMenu = document.querySelector('.dropdown_menu')
-
-            checkbtn.onclick = function () {
-                dropDownMenu.classList.toggle('open')
-                const isOpen = dropDownMenu.classList.contains('open')
-                checkbtnIcon.classList = isOpen
-                ? 'fa-solid fa-xmark'
-                : 'fa-solid fa-bars-staggered'
-            }
-        </script>
         <!-- chatbox not chatbot -->
         <div>
         <button class="chatbot-toggler">
@@ -71,6 +89,59 @@
                 
             </div>
         </div>
-    </div>
+        </div>
+
+        <!-- <h3 class="textcls"></h3>
+        <h3 class="textcls"></h3> -->
+        <div class="container">
+            <div class="person-info">
+                
+                <p class="info-label">Chiều cao:</p>
+                <p id="hght" class="info-value"></p>
+                
+                <p class="info-label">Cân nặng:</p>
+                <p id="wght" class="info-value"></p>
+                
+                <p class="info-label">BMI:</p>
+                <p id="bmi" class="info-value"></p>
+                
+                <p class="info-label">Lượng Calo hàng ngày cần thiết:</p>
+                <p id="calo" class="info-value"></p>
+            </div>
+        </div>
+        <script>
+            const Ages = localStorage.getItem('AGES');
+            const Wght = localStorage.getItem('WEIGHT');
+            const Hght = localStorage.getItem('HEIGHT'); 
+            const Gender = localStorage.getItem('GENDER');
+            const Sick = localStorage.getItem('SICK');
+            const Jobs = localStorage.getItem('JOBS');
+            var BMR, Calo, BMI;
+            if(Gender == "MALE")
+                BMR = 88.362 + (13.397 * Wght) + (4.799 * Hght) - (5.677 * Ages);
+            else
+                BMR = 447.593 + (9.247 * Wght) + (3.098 * Hght) - (4.330 * Ages);
+            if(Jobs == "ldnhe")
+                Calo = BMR * 1.375;
+            else if(Jobs == "ldvua")
+                Calo = BMR * 1.55;
+            else
+                Calo = BMR * 1.725;
+            BMI = Wght / ((Hght / 100) * (Hght / 100));
+            if(BMI < 18.5)
+            Calo = Calo + 100;
+            else if(BMI >= 25)
+            Calo = Calo - 100;
+            cao = document.getElementById("hght");
+            nang = document.getElementById("wght"); 
+            bmi = document.getElementById("bmi");
+            calo = document.getElementById("calo");
+            cao.innerHTML = Hght;
+            nang.innerHTML = Wght;
+            bmi.innerHTML = Math.round(BMI);
+            calo.innerHTML = Math.round(Calo);  
+        </script>
+    <script src="script.js" defer></script>
+    <!-- <script src="infor.js"></script> -->
     </body>
 </html>
