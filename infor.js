@@ -140,10 +140,10 @@ window.addEventListener('load', ()=> {
     const luamach = new NguyenLieu("lúa mạch", 0, "gram");
 
     //món ăn
-    const chaoyenmachkhongduongvoihatlanhvaquadua = new MonAn("cháo yến mạch không đường với hạt lanh và quả dứa", "sau này sẽ là địa chỉ của hình món ăn :v", [yenmach, nuoc, hatlanh, quadua], "https://youtube.com/shorts/vVVYkvxPAG0?si=bWOv7hiDvcyVIku0");
-    const ganuongkhongdavoirauxanh = new MonAn("gà nướng không da với rau xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [ga, rauxanh, bo, hanhtay], "https://youtu.be/jzY0G2ziPIs?si=QyJJNqeSSNalqIn-");
-    const suploxanhvacachua = new MonAn("xúp lơ xanh và cà chua", "sau này sẽ là địa chỉ của hình món ăn :v", [loxanh, cachua, nuoc], "https://youtu.be/a7qOAxfDEe0?si=cbNRRJm9K8qM5nhK");
-    const cahoinuongvoiluamachvarauxanh = new MonAn("cá hồi nướng với lúa mạch và rau xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [cahoi, luamach, rauxanh], "https://youtu.be/0JOfwDLuTEU?si=GxUPZmlZMYYjXFbC");
+    const chaoyenmachkhongduongvoihatlanhvaquadua = new MonAn("cháo yến mạch không đường với hạt lanh và quả dứa", "sau này sẽ là địa chỉ của hình món ăn :v", [yenmach, nuoc, hatlanh, quadua], "https://www.youtube.com/embed/aOfxu90TGAQ?si=u479cjtVvgelqO_3");
+    const ganuongkhongdavoirauxanh = new MonAn("gà nướng không da với rau xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [ga, rauxanh, bo, hanhtay], "https://www.youtube.com/embed/jzY0G2ziPIs?si=Y-0lVCXYjAa6rIUi");
+    const suploxanhvacachua = new MonAn("xúp lơ xanh và cà chua", "sau này sẽ là địa chỉ của hình món ăn :v", [loxanh, cachua, nuoc], "https://www.youtube.com/embed/a7qOAxfDEe0?si=hQ_j8BWeggJql7VL");
+    const cahoinuongvoiluamachvarauxanh = new MonAn("cá hồi nướng với lúa mạch và rau xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [cahoi, luamach, rauxanh], "https://www.youtube.com/embed/0JOfwDLuTEU?si=zLdMBloeIsrDOQqF");
 
     //cập nhật số lượng
     chaoyenmachkhongduongvoihatlanhvaquadua.capNhatSoLuongNguyenLieu("yến mạch", Math.round((8.7 * Calo / 100) / 0.676));
@@ -188,9 +188,9 @@ window.addEventListener('load', ()=> {
 
     //món ăn
     const banhmiluamachvoimutdauvabohatlanh = new MonAn("bánh mì lúa mạch với mứt dâu và bơ hạt lanh", "menu_img/banhmiluamachvoimutdauvabohatlanh.jpg", [banhmiluamach, mutdau, bohatlanh]);
-    const comtrangvoithitganuong = new MonAn("cơm trắng với thịt gà nướng(loại bỏ da) và rau xanh", "menu_img/comtrangvoithitganuong.jpg", [com, thitga, rauxanh], "https://youtu.be/jzY0G2ziPIs?si=QyJJNqeSSNalqIn-");
+    const comtrangvoithitganuong = new MonAn("cơm trắng với thịt gà nướng(loại bỏ da) và rau xanh", "menu_img/comtrangvoithitganuong.jpg", [com, thitga, rauxanh], "https://www.youtube.com/embed/jzY0G2ziPIs?si=QejWOqhT3bIOIbk6");
     const banhmisandwichhapvoihanhtayvahatlanh = new MonAn("bánh mì sandwich hấp với hành tây và hạt lanh", "menu_img/banhmisandwichhapvoihanhtayvahatlanh.jpeg", [banhmi, hanhtay, hatlanh]);
-    const cahoinuongvoiluamachvarauxanh = new MonAn("cá hồi nướng với lúa mạch và rau xanh", "menu_img/cahoinuongvoiluamachvarauxanh.jpg", [cahoi, luamach, rauxanh], "https://youtu.be/0JOfwDLuTEU?si=GxUPZmlZMYYjXFbC");
+    const cahoinuongvoiluamachvarauxanh = new MonAn("cá hồi nướng với lúa mạch và rau xanh", "menu_img/cahoinuongvoiluamachvarauxanh.jpg", [cahoi, luamach, rauxanh], "https://www.youtube.com/embed/0JOfwDLuTEU?si=H_6gCDJN8ZN85fNF");
 
     //cập nhật số lượng
     banhmiluamachvoimutdauvabohatlanh.capNhatSoLuongNguyenLieu("bánh mì lúa mạch", Math.round((11.1 * Calo / 100) / 2.591));

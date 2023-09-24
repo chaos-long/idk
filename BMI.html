@@ -48,7 +48,6 @@
                 <!-- <li><a href="Menu.html">Menu</a></li> -->
                 <li><a href="BMI.html" >BMI</a></li>
                 <li><a href="setting.html" >Setting</a></li>  
-                <li><a href="More.html" >More</a></li>
             </ul>
             <div class="welcome_frame">
                 <p class="hello_name">HELLO <input id="fullname" ></p>
@@ -91,8 +90,6 @@
         </div>
         </div>
 
-        <!-- <h3 class="textcls"></h3>
-        <h3 class="textcls"></h3> -->
         <div class="container">
             <div class="person-info">
                 
@@ -136,10 +133,10 @@
             nang = document.getElementById("wght"); 
             bmi = document.getElementById("bmi");
             calo = document.getElementById("calo");
-            cao.innerHTML = Hght;
-            nang.innerHTML = Wght;
+            cao.innerHTML = Hght + " cm";
+            nang.innerHTML = Wght + " kg";
             bmi.innerHTML = Math.round(BMI);
-            calo.innerHTML = Math.round(Calo);  
+            calo.innerHTML = Math.round(Calo) + " Calo";  
         </script>
     <script src="script.js" defer></script>
     <!-- <script src="infor.js"></script> -->
