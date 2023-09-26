@@ -10,4 +10,3 @@ steptwo = stepone.split(secretOne);
 stepthree = steptwo[0] + steptwo[1];
 key = stepthree + secret;
 
-console.log(key);
