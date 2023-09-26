@@ -140,10 +140,10 @@ window.addEventListener('load', ()=> {
     const luamach = new NguyenLieu("lúa mạch", 0, "gram");
 
     //món ăn
-    const chaoyenmachkhongduongvoihatlanhvaquadua = new MonAn("cháo yến mạch không đường với hạt lanh và quả dứa", "sau này sẽ là địa chỉ của hình món ăn :v", [yenmach, nuoc, hatlanh, quadua], "https://www.youtube.com/embed/aOfxu90TGAQ?si=u479cjtVvgelqO_3");
-    const ganuongkhongdavoirauxanh = new MonAn("gà nướng không da với rau xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [ga, rauxanh, bo, hanhtay], "https://www.youtube.com/embed/jzY0G2ziPIs?si=Y-0lVCXYjAa6rIUi");
-    const suploxanhvacachua = new MonAn("xúp lơ xanh và cà chua", "sau này sẽ là địa chỉ của hình món ăn :v", [loxanh, cachua, nuoc], "https://www.youtube.com/embed/a7qOAxfDEe0?si=hQ_j8BWeggJql7VL");
-    const cahoinuongvoiluamachvarauxanh = new MonAn("cá hồi nướng với lúa mạch và rau xanh", "sau này sẽ là địa chỉ của hình món ăn :v", [cahoi, luamach, rauxanh], "https://www.youtube.com/embed/0JOfwDLuTEU?si=zLdMBloeIsrDOQqF");
+    const chaoyenmachkhongduongvoihatlanhvaquadua = new MonAn("cháo yến mạch không đường với hạt lanh và quả dứa", "menu_img/chaoyenmachkhongduongvoihatlanhvaquadua.jpg", [yenmach, nuoc, hatlanh, quadua], "https://www.youtube.com/embed/aOfxu90TGAQ?si=u479cjtVvgelqO_3");
+    const ganuongkhongdavoirauxanh = new MonAn("gà nướng không da với rau xanh", "menu_img/ganuongkhongdavoirauxanh.jpg", [ga, rauxanh, bo, hanhtay], "https://www.youtube.com/embed/jzY0G2ziPIs?si=Y-0lVCXYjAa6rIUi");
+    const suploxanhvacachua = new MonAn("xúp lơ xanh và cà chua", "menu_img/suploxanhvacachua.jpg", [loxanh, cachua, nuoc], "https://www.youtube.com/embed/a7qOAxfDEe0?si=hQ_j8BWeggJql7VL");
+    const cahoinuongvoiluamachvarauxanh = new MonAn("cá hồi nướng với lúa mạch và rau xanh", "menu_img/cahoinuongvoiluamachvarauxanh.jpg", [cahoi, luamach, rauxanh], "https://www.youtube.com/embed/0JOfwDLuTEU?si=zLdMBloeIsrDOQqF");
 
     //cập nhật số lượng
     chaoyenmachkhongduongvoihatlanhvaquadua.capNhatSoLuongNguyenLieu("yến mạch", Math.round((8.7 * Calo / 100) / 0.676));

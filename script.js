@@ -21,7 +21,7 @@ const  createChatLi = (message, className) => {
     chatLi.querySelector("p").textContent = message;
     return chatLi;
 }
-// chỗ này nè
+// xử lí câu trả lời
 const generateResponse = (incomingChatLi) =>{
     const API_URL = "https://api.openai.com/v1/chat/completions";
     const messageElement = incomingChatLi.querySelector("p");
