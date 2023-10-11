@@ -286,7 +286,7 @@ window.addEventListener('load', ()=> {
         Calo = BMR * 1.55;
     else
         Calo = BMR * 1.725;
-    BMI = Wght / (Hght*Hght);
+    BMI = Wght / ((Hght / 100)*(Hght/100));
     if(BMI < 18.5)
       Calo = Calo + 100;
     else if(BMI >= 25)
