@@ -176,8 +176,8 @@ window.addEventListener('load', ()=> {
     const bun = new NguyenLieu("bún", 0, "gram");
     const thitBo = new NguyenLieu("thịt bò", 0, "gram");
     const huyetSan = new NguyenLieu("huyết sán", 0, "gram");
-    const rauSong = new NguyenLieu("rau sống", 0, "gram");
-    const giaVi = new NguyenLieu("gia vị", 0, "gram");
+    const rauSong = new NguyenLieu("rau sống", "tùy nhu cầu", "");
+    const giaVi = new NguyenLieu("gia vị", "tùy nhu cầu", "");
     const gaTuoi = new NguyenLieu("gà tươi", 0, "gram");
     const rauCai = new NguyenLieu("rau cải", 0, "gram");
 
@@ -188,16 +188,16 @@ window.addEventListener('load', ()=> {
 
     // Cập nhật số lượng nguyên liệu dựa trên %
     // Bún bò Huế
-    bunBoHue.capNhatSoLuongNguyenLieu("bún", Math.round((12 * Calo / 100) / (3.67 / 100)));
-    bunBoHue.capNhatSoLuongNguyenLieu("thịt bò", Math.round((8 * Calo / 100) / (250 / 100)));
-    bunBoHue.capNhatSoLuongNguyenLieu("huyết sán", Math.round((3 * Calo / 100) / (153.84 / 100)));
+    bunBoHue.capNhatSoLuongNguyenLieu("bún", Math.round((12 * Calo / 100) / 1.1));
+    bunBoHue.capNhatSoLuongNguyenLieu("thịt bò", Math.round((8 * Calo / 100) / 2.5));
+    bunBoHue.capNhatSoLuongNguyenLieu("huyết sán", Math.round((3 * Calo / 100) / 1.12));
 
     // Gỏi gà
-    goiGa.capNhatSoLuongNguyenLieu("gà tươi", Math.round((9 * Calo / 100) / (239.13 / 100)));
-    goiGa.capNhatSoLuongNguyenLieu("bún", Math.round((5 * Calo / 100) / (3.67 / 100)));
+    goiGa.capNhatSoLuongNguyenLieu("gà tươi", Math.round((9 * Calo / 100) / 1.65));
+    goiGa.capNhatSoLuongNguyenLieu("bún", Math.round((5 * Calo / 100) / 1.1));
 
     // Canh rau cải luộc
-    canhRauCaiLuoc.capNhatSoLuongNguyenLieu("rau cải", Math.round((6 * Calo / 100) / (26.09 / 100)));
+    canhRauCaiLuoc.capNhatSoLuongNguyenLieu("rau cải", Math.round((6 * Calo / 100) / 0.65));
 
     // Bữa ăn (Meals)
     const sangThu2 = new meal("7h", [bunBoHue]);
@@ -217,7 +217,7 @@ window.addEventListener('load', ()=> {
     const gung = new NguyenLieu("gừng", 0, "gram");
     const biDo = new NguyenLieu("bí đỏ", 0, "gram");
     const hatSen = new NguyenLieu("hạt sen", 0, "gram");
-    const giaVi3 = new NguyenLieu("gia vị", 0, "gram");
+    const giaVi3 = new NguyenLieu("gia vị", "tùy nhu cầu", "");
 
     // Món ăn (Dishes)
     const banhMiNuongTrungTrangChaCa = new MonAn("Bánh mì nướng trứng tráng chả cá", "menu_img/banhminuongtrungtrangchaca.jpg", [banhMiLuaMach, trung, chaCa], "https://www.youtube.com/embed/CSruC_f2Zrw?si=_g7LKT615At2yVPI");
@@ -295,19 +295,19 @@ window.addEventListener('load', ()=> {
     thucDon2 = []
     const banhmiluamach3 = new NguyenLieu("Bánh mì lúa mạch", 0, "gram");
     const hantay3 = new NguyenLieu("Hành tây", 0, "gram");
-    const giaVi3 = new NguyenLieu("Gia vị", 0, "gram");
+    const giaVi3 = new NguyenLieu("Gia vị", "tùy nhu cầu", "");
     const com4 = new NguyenLieu("Cơm", 0, "gram");
     const thitbo3 = new NguyenLieu("Thịt bò", 0, "gram");
-    const rauxalach2 = new NguyenLieu("Rau xà lách", 0, "gram");
+    const rauxalach2 = new NguyenLieu("Rau xà lách", "tùy nhu cầu", "");
     const goiBuoiTom2 = new NguyenLieu("Bưởi", 0, "gram");
     const tom2 = new NguyenLieu("Tôm", 0, "gram");
-    const rausong2 = new NguyenLieu("Rau sống", 0, "gram");
-    const giaVi2 = new NguyenLieu("Gia vị", 0, "gram");
+    const rausong2 = new NguyenLieu("Rau sống", "tùy nhu cầu", "");
+    const giaVi2 = new NguyenLieu("Gia vị", "tùy nhu cầu", "");
 
     // Define dishes for Tuesday
-    const banhmiluamachhanhtayxao2 = new MonAn("Bánh mì lúa mạch và hành tây xào", "menu_img/banhmiluamachhanhtayxao.jpg", [banhmiluamach3, hantay3, giaVi3], "https://www.youtube.com/embed/example22");
-    const comthitbonuongrauxalach2 = new MonAn("Cơm, thịt bò nướng, rau xà lách", "menu_img/comthitbonuongrauxalach.jpg", [com4, thitbo3, rauxalach2, giaVi2], "https://www.youtube.com/embed/example23");
-    const goibuoi2 = new MonAn("Gỏi bưởi với tôm", "menu_img/goibuoi.jpg", [goiBuoiTom2, tom2, rausong2, giaVi2], "https://www.youtube.com/embed/example24");
+    const banhmiluamachhanhtayxao2 = new MonAn("Bánh mì lúa mạch và hành tây xào", "menu_img/banhmiluamachhanhtayxao.jpg", [banhmiluamach3, hantay3, giaVi3], "https://www.youtube.com/embed/WXdLC_Hrq0o?si=pR11nyWR4MAc3lCs");
+    const comthitbonuongrauxalach2 = new MonAn("Cơm, thịt bò nướng, rau xà lách", "menu_img/comthitbonuongrauxalach.jpg", [com4, thitbo3, rauxalach2, giaVi2], "https://www.youtube.com/embed/6NQuG-30C_o?si=amXnd47J7t6exMUp");
+    const goibuoi2 = new MonAn("Gỏi bưởi với tôm", "menu_img/goibuoi.jpg", [goiBuoiTom2, tom2, rausong2, giaVi2], "https://www.youtube.com/embed/DQ2iYH2dnLg?si=TKkRWgJXuULRZdYe");
 
     // Update ingredient quantities based on the given percentages
     banhmiluamachhanhtayxao2.capNhatSoLuongNguyenLieu("Bánh mì lúa mạch", Math.round((15 * Calo / 100) / 2.591));
@@ -335,12 +335,12 @@ window.addEventListener('load', ()=> {
     const bapluoc2 = new NguyenLieu("Bắp", 0, "gram");
     const hamberlualuamach2 = new NguyenLieu("Bánh mì lúa mạch", 0, "gram");
     const burgerchay2 = new NguyenLieu("Burger chay", 0, "gram");
-    const rausong3 = new NguyenLieu("Rau sống", 0, "gram");
+    const rausong3 = new NguyenLieu("Rau sống", "tùy nhu cầu", "");
 
     // Define dishes for Thursday
-    const chaoluamachhatoccho3 = new MonAn("Cháo lúa mạch với hạt óc chó", "menu_img/chaoluamachhatoccho.jpg", [chaoluamach3, hatoccho4, hanhtim2], "https://www.youtube.com/embed/example25");
-    const comthitganuongbapluoc3 = new MonAn("Cơm, thịt gà nướng, bắp luộc", "menu_img/comthitganuongbapluoc.jpg", [com5, thitga2, bapluoc2, giaVi3], "https://www.youtube.com/embed/example26");
-    const hamburgerchay3 = new MonAn("Hamburger chay", "menu_img/hamburgerchay.jpg", [hamberlualuamach2, burgerchay2, rausong3, giaVi3], "https://www.youtube.com/embed/example27");
+    const chaoluamachhatoccho3 = new MonAn("Cháo lúa mạch với hạt óc chó", "menu_img/chaoluamachhatoccho.jpg", [chaoluamach3, hatoccho4, hanhtim2], "https://www.youtube.com/embed/0qyhQzBpaRo?si=-aqg71BMsDsrM6zo");
+    const comthitganuongbapluoc3 = new MonAn("Cơm, thịt gà nướng, bắp luộc", "menu_img/comthitganuongbapluoc.jpg", [com5, thitga2, bapluoc2, giaVi3], "https://www.youtube.com/embed/n0yFgB60iCc?si=vbi0m-LDr-P5JH0O");
+    const hamburgerchay3 = new MonAn("Hamburger chay", "menu_img/hamburgerchay.jpg", [hamberlualuamach2, burgerchay2, rausong3, giaVi3], "https://www.youtube.com/embed/EGPO3HNxHRE?si=H5am4N9if5vKaJps");
 
     // Update ingredient quantities based on the given percentages
     chaoluamachhatoccho3.capNhatSoLuongNguyenLieu("Cháo lúa mạch", Math.round((12 * Calo / 100) / 0.676));
@@ -417,11 +417,11 @@ window.addEventListener('load', ()=> {
     thucDon2 = [];
     const banhmiluamach2 = new NguyenLieu("Bánh mì lúa mạch", 0, "gram");
     const hantay2 = new NguyenLieu("Hành tây", 0, "gram");
-    const giaVi2 = new NguyenLieu("Gia vị", 0, "gram");
+    const giaVi2 = new NguyenLieu("Gia vị", "tùy nhu cầu", "");
     const duahau = new NguyenLieu("Dưa hấu", 0, "gram");
     const com2 = new NguyenLieu("Cơm", 0, "gram");
     const thitbo2 = new NguyenLieu("Thịt bò", 0, "gram");
-    const rauxalach = new NguyenLieu("Rau xà lách", 0, "gram");
+    const rauxalach = new NguyenLieu("Rau xà lách", "tùy nhu cầu", "");
     const yoghurt = new NguyenLieu("Yoghurt thấp calo", 0, "ml");
     const cahoi2 = new NguyenLieu("Cá hồi", 0, "gram");
     const bapxao = new NguyenLieu("Bắp", 0, "gram");
@@ -429,12 +429,12 @@ window.addEventListener('load', ()=> {
     const tom = new NguyenLieu("Tôm", 0, "gram");
 
     // Define dishes for Tuesday
-    const banhmiluamachhanhtayxao = new MonAn("Bánh mì lúa mạch và hành tây xào", "menu_img/banhmiluamachhanhtayxao.jpg", [banhmiluamach2, hantay2, giaVi2], "https://www.youtube.com/embed/example10");
-    const duahautuoi = new MonAn("Dưa hấu tươi", "menu_img/duahautuoi.jpg", [duahau], "https://www.youtube.com/embed/example11");
-    const comthitbonuongrauxalach = new MonAn("Cơm, thịt bò nướng, rau xà lách", "menu_img/comthitbonuongrauxalach.jpg", [com2, thitbo2, rauxalach, giaVi2], "https://www.youtube.com/embed/example12");
-    const yoghurtthapcalo = new MonAn("Yoghurt thấp calo", "menu_img/yoghurtthapcalo.jpg", [yoghurt], "https://www.youtube.com/embed/example13");
-    const comcahoi = new MonAn("Cơm, cá hồi nướng, bắp xào", "menu_img/comcahoi.jpg", [com2, cahoi2, bapxao, dauan, giaVi2], "https://www.youtube.com/embed/example14");
-    const goibuoi = new MonAn("Gỏi bưởi với tôm", "menu_img/goibuoi.jpg", [goiBuoiTom, tom, rauxalach, giaVi2], "https://www.youtube.com/embed/example15");
+    const banhmiluamachhanhtayxao = new MonAn("Bánh mì lúa mạch và hành tây xào", "menu_img/banhmiluamachhanhtayxao.jpg", [banhmiluamach2, hantay2, giaVi2], "https://www.youtube.com/embed/WXdLC_Hrq0o?si=pR11nyWR4MAc3lCs");
+    const duahautuoi = new MonAn("Dưa hấu tươi", "menu_img/duahautuoi.jpg", [duahau]);
+    const comthitbonuongrauxalach = new MonAn("Cơm, thịt bò nướng, rau xà lách", "menu_img/comthitbonuongrauxalach.jpg", [com2, thitbo2, rauxalach, giaVi2], "https://www.youtube.com/embed/6NQuG-30C_o?si=amXnd47J7t6exMUp");
+    const yoghurtthapcalo = new MonAn("Yoghurt thấp calo", "menu_img/yoghurtthapcalo.jpg", [yoghurt], "https://www.youtube.com/embed/AgNtOOa8dg8?si=VfpGs3xMewyzb2hb");
+    const comcahoi = new MonAn("Cơm, cá hồi nướng, bắp xào", "menu_img/comcahoi.jpg", [com2, cahoi2, bapxao, dauan, giaVi2], "https://www.youtube.com/embed/PkmygIYaIYQ?si=4zndK3tBzR8Kevx_");
+    const goibuoi = new MonAn("Gỏi bưởi với tôm", "menu_img/goibuoi.jpg", [goiBuoiTom, tom, rauxalach, giaVi2], "https://www.youtube.com/embed/DQ2iYH2dnLg?si=TKkRWgJXuULRZdYe");
 
     // Update ingredient quantities based on the given percentages
     banhmiluamachhanhtayxao.capNhatSoLuongNguyenLieu("Bánh mì lúa mạch", Math.round((15 * Calo / 100) / 2.591));
@@ -475,16 +475,16 @@ window.addEventListener('load', ()=> {
     const traituoitai = new NguyenLieu("Dâu", 0, "gram");
     const hamberlualuamach = new NguyenLieu("Bánh mì lúa mạch", 0, "gram");
     const burgerchay = new NguyenLieu("Burger chay", 0, "gram");
-    const rausong = new NguyenLieu("Rau sống", 0, "gram");
-    const giavithapcalo = new NguyenLieu("Gia vị thấp calo", 0, "gram");
+    const rausong = new NguyenLieu("Rau sống", "tùy nhu cầu", "");
+    const giavithapcalo = new NguyenLieu("Gia vị thấp calo", "tùy nhu cầu", "");
 
     // Define dishes for Wednesday
-    const chaoluamachhatoccho = new MonAn("Cháo lúa mạch với hạt óc chó", "menu_img/chaoluamachhatoccho.jpg", [chaoluamach, hatoccho3, hanhtim], "https://www.youtube.com/embed/example16");
-    const hatlanhhatbingo = new MonAn("Hạt lanh và hạt bí ngô", "menu_img/hatlanhhatbingo.jpg", [hatlanh2, hatbingo], "https://www.youtube.com/embed/example17");
-    const comthitganuongbapluoc = new MonAn("Cơm, thịt gà nướng, bắp luộc", "menu_img/comthitganuongbapluoc.jpg", [com3, thitga, bapluoc, gavii2], "https://www.youtube.com/embed/example18");
-    const salattraicayhatoccho = new MonAn("Salat trái cây với hạt óc chó", "menu_img/salattraicayhatoccho.jpg", [traituoitai, hatoccho3], "https://www.youtube.com/embed/example19");
-    const comnangcap = new MonAn("Cơm cá hồi", "menu_img/comnangcap.jpg", [com3, cahoi2, rauxalach, gavii2], "https://www.youtube.com/embed/example20");
-    const hamburgerchay = new MonAn("Hamburger chay", "menu_img/hamburgerchay.jpg", [hamberlualuamach, burgerchay, rausong, giavithapcalo], "https://www.youtube.com/embed/example21");
+    const chaoluamachhatoccho = new MonAn("Cháo lúa mạch với hạt óc chó", "menu_img/chaoluamachhatoccho.jpg", [chaoluamach, hatoccho3, hanhtim], "https://www.youtube.com/embed/0qyhQzBpaRo?si=kbkHDJzoeQ-v3He1");
+    const hatlanhhatbingo = new MonAn("Hạt lanh và hạt bí ngô", "menu_img/hatlanhhatbingo.jpg", [hatlanh2, hatbingo], "");
+    const comthitganuongbapluoc = new MonAn("Cơm, thịt gà nướng, bắp luộc", "menu_img/comthitganuongbapluoc.jpg", [com3, thitga, bapluoc, gavii2], "https://www.youtube.com/embed/n0yFgB60iCc?si=u0I67_Om2DSG6RKQ");
+    const salattraicayhatoccho = new MonAn("Salat trái cây với hạt óc chó", "menu_img/salattraicayhatoccho.jpg", [traituoitai, hatoccho3], "https://www.youtube.com/embed/ovhgTtPwweM?si=D4nNSNoZvmVIN2b-");
+    const comnangcap = new MonAn("Cơm cá hồi", "menu_img/comnangcap.jpg", [com3, cahoi2, rauxalach, gavii2], "https://www.youtube.com/embed/_IT0F8S6hz0?si=qEUK1y1iGMF1Zqe0");
+    const hamburgerchay = new MonAn("Hamburger chay", "menu_img/hamburgerchay.jpg", [hamberlualuamach, burgerchay, rausong, giavithapcalo], "https://www.youtube.com/embed/EGPO3HNxHRE?si=4b_9xnsovtuVMbQm");
 
     // Update ingredient quantities based on the given percentages
     chaoluamachhatoccho.capNhatSoLuongNguyenLieu("Cháo lúa mạch", Math.round((12 * Calo / 100) / 0.676));
@@ -524,8 +524,8 @@ window.addEventListener('load', ()=> {
     const bun = new NguyenLieu("bún", 0, "gram");
     const thitBo = new NguyenLieu("thịt bò", 0, "gram");
     const huyetSan = new NguyenLieu("huyết sán", 0, "gram");
-    const rauSong = new NguyenLieu("rau sống", 0, "gram");
-    const giaVi = new NguyenLieu("gia vị", 0, "gram");
+    const rauSong = new NguyenLieu("rau sống", "tùy nhu cầu", "");
+    const giaVi = new NguyenLieu("gia vị", "tùy nhu cầu", "");
     const gaTuoi = new NguyenLieu("gà tươi", 0, "gram");
     const rauCai = new NguyenLieu("rau cải", 0, "gram");
     const ga = new NguyenLieu("gà", 0, "gram");
@@ -537,16 +537,16 @@ window.addEventListener('load', ()=> {
 
     // Cập nhật số lượng nguyên liệu dựa trên %
     // Bún bò Huế
-    bunBoHue.capNhatSoLuongNguyenLieu("bún", Math.round((12 * Calo / 100) / (3.67 / 100)));
-    bunBoHue.capNhatSoLuongNguyenLieu("thịt bò", Math.round((8 * Calo / 100) / (250 / 100)));
-    bunBoHue.capNhatSoLuongNguyenLieu("huyết sán", Math.round((3 * Calo / 100) / (153.84 / 100)));
+    bunBoHue.capNhatSoLuongNguyenLieu("bún", Math.round((12 * Calo / 100) / 1.1));
+    bunBoHue.capNhatSoLuongNguyenLieu("thịt bò", Math.round((8 * Calo / 100) / 2.5));
+    bunBoHue.capNhatSoLuongNguyenLieu("huyết sán", Math.round((3 * Calo / 100) / 1.12));
 
     // Gỏi gà
-    goiGa.capNhatSoLuongNguyenLieu("gà tươi", Math.round((9 * Calo / 100) / (239.13 / 100)));
-    goiGa.capNhatSoLuongNguyenLieu("bún", Math.round((5 * Calo / 100) / (3.67 / 100)));
+    goiGa.capNhatSoLuongNguyenLieu("gà tươi", Math.round((9 * Calo / 100) / 1.65));
+    goiGa.capNhatSoLuongNguyenLieu("bún", Math.round((5 * Calo / 100) / 1.1));
 
     // Canh rau cải luộc
-    canhRauCaiLuoc.capNhatSoLuongNguyenLieu("rau cải", Math.round((6 * Calo / 100) / (26.09 / 100)));
+    canhRauCaiLuoc.capNhatSoLuongNguyenLieu("rau cải", Math.round((6 * Calo / 100) / 0.65));
 
     // Bữa ăn (Meals)
     const sangThu2 = new meal("7h", [bunBoHue]);
@@ -566,7 +566,7 @@ window.addEventListener('load', ()=> {
     const gung = new NguyenLieu("gừng", 0, "gram");
     const biDo = new NguyenLieu("bí đỏ", 0, "gram");
     const hatSen = new NguyenLieu("hạt sen", 0, "gram");
-    const giaVi3 = new NguyenLieu("gia vị", 0, "gram");
+    const giaVi3 = new NguyenLieu("gia vị", "tùy nhu cầu", "");
 
     // Món ăn (Dishes)
     const banhMiNuongTrungTrangChaCa = new MonAn("Bánh mì nướng trứng tráng chả cá", "menu_img/banhminuongtrungtrangchaca.jpg", [banhMiLuaMach, trung, chaCa], "https://www.youtube.com/embed/CSruC_f2Zrw?si=_g7LKT615At2yVPI");
@@ -598,7 +598,7 @@ window.addEventListener('load', ()=> {
     // Define ingredients
     thucDon3 = [];
     const oatmeal = new NguyenLieu("Bột yến mạch", 0, "gram");
-    const raungon = new NguyenLieu("rau sống", 0, "gram");
+    const raungon = new NguyenLieu("rau sống", "tùy nhu cầu", "");
     const hatoccho = new NguyenLieu("Hạt óc chó", 0, "gram");
     const dau = new NguyenLieu("Dâu", 0, "gram");
     const sua = new NguyenLieu("Sữa hạt", 0, "ml");
@@ -606,13 +606,13 @@ window.addEventListener('load', ()=> {
     const comtam = new NguyenLieu("Cơm tấm", 0, "gram");
     const suonnuong = new NguyenLieu("Sườn nướng", 0, "gram");
     const nuocmampha = new NguyenLieu("Nước mắm pha", 0, "ml");
-    const comtamgia = new NguyenLieu("Gia vị", 0, "gram");
+    const comtamgia = new NguyenLieu("Gia vị", "tùy nhu cầu", "");
     const catim = new NguyenLieu("Cà tím", 0, "gram");
     const bidogia = new NguyenLieu("Bí đỏ", 0, "gram");
     // Define dishes for Wednesday
-    const oatmealhatochovaudau = new MonAn("Bột yến mạch với hạt óc chó và dâu", "menu_img/oatmealvoihatocchovadau.jpeg", [oatmeal, hatoccho, dau, sua, oatmealgia], "https://www.youtube.com/embed/example7");
-    const comtamsuonnuong = new MonAn("Cơm tấm sườn nướng", "menu_img/comtamsuonnuong.jpg", [comtam, suonnuong, raungon, nuocmampha, comtamgia], "https://www.youtube.com/embed/example8");
-    const canhcatimvabidoluoc = new MonAn("Canh cà tím và bí đỏ luộc", "menu_img/canhcatimvabidoluoc.jpg", [catim, bidogia, bidogia, bidogia, bidogia, bidogia, bidogia], "https://www.youtube.com/embed/example9");
+    const oatmealhatochovaudau = new MonAn("Bột yến mạch với hạt óc chó và dâu", "menu_img/oatmealvoihatocchovadau.jpeg", [oatmeal, hatoccho, dau, sua, oatmealgia], "https://www.youtube.com/embed/aOfxu90TGAQ?si=eEn_XSJXmferORWW");
+    const comtamsuonnuong = new MonAn("Cơm tấm sườn nướng", "menu_img/comtamsuonnuong.jpg", [comtam, suonnuong, raungon, nuocmampha, comtamgia], "https://www.youtube.com/embed/VuZoI4WRW9Q?si=LSek7N8qINFupS6K");
+    const canhcatimvabidoluoc = new MonAn("Canh cà tím và bí đỏ luộc", "menu_img/canhcatimvabidoluoc.jpg", [catim, bidogia, bidogia, bidogia, bidogia, bidogia, bidogia], "https://www.youtube.com/embed/FzoKQF6M7QU?si=s5hbNEB0SwcHtNwU");
 
     // Update ingredient quantities based on the given percentages
     oatmealhatochovaudau.capNhatSoLuongNguyenLieu("Bột yến mạch", Math.round((12 * Calo / 100) / 0.676));
