@@ -102,16 +102,20 @@ const carouselChildrens = [...carousel.children];
 let isDragging = false, startX, startScrollLeft, timeoutId;
 
 
-// let cardPerView = Math.round(carousel.offsetWidth/ firstCardWidth);
-// carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
-//     carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
-// });
+let cardPerView = Math.round(carousel.offsetWidth/ firstCardWidth);
+let cc = carouselChildrens.slice(0);
+console.log(cardPerView);
+console.log(cc.length);
+if (cardPerView < cc.length) {
+    carouselChildrens.slice(-cardPerView).reverse().forEach(card => {
+        carousel.insertAdjacentHTML("afterbegin", card.outerHTML);
+    });
 
+    carouselChildrens.slice(0, cardPerView).forEach(card => {
+        carousel.insertAdjacentHTML("beforeend", card.outerHTML);
 
-// carouselChildrens.slice(0, cardPerView).forEach(card => {
-//     carousel.insertAdjacentHTML("beforeend", card.outerHTML);
-
-// });
+    });
+}
 
 arrowBtns.forEach(btn => {
     btn.addEventListener("click", () => {
@@ -134,26 +138,26 @@ const dragStop = () =>{
     carousel.classList.remove("dragging");
 }
 
-const autoPlay = () =>{
-    if(window.innerWidth < 800) return;
-    timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
-}
-autoPlay();
-const infiniteScroll = () => {
-    if(carousel.scrollLeft === 0){
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = carousel.scrollWidth - (2* carousel.offsetWidth);
-        carousel.classList.remove("no-transition");
-    }
-    else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
-        carousel.classList.add("no-transition");
-        carousel.scrollLeft = carousel.offsetWidth;
-        carousel.classList.remove("no-transition");
-    }
+// const autoPlay = () =>{
+//     if(window.innerWidth < 800) return;
+//     timeoutId = setTimeout(() => carousel.scrollLeft += firstCardWidth, 2500);
+// }
+// autoPlay();
+// const infiniteScroll = () => {
+//     if(carousel.scrollLeft === 0){
+//         carousel.classList.add("no-transition");
+//         carousel.scrollLeft = carousel.scrollWidth - (2* carousel.offsetWidth);
+//         carousel.classList.remove("no-transition");
+//     }
+//     else if(Math.ceil(carousel.scrollLeft) === carousel.scrollWidth - carousel.offsetWidth){
+//         carousel.classList.add("no-transition");
+//         carousel.scrollLeft = carousel.offsetWidth;
+//         carousel.classList.remove("no-transition");
+//     }
 
-    clearTimeout(timeoutId);
-    if(!wrapper.matches(":hover")) autoPlay();
-}
+//     clearTimeout(timeoutId);
+//     if(!wrapper.matches(":hover")) autoPlay();
+// }
 carousel.addEventListener("mousedown", dragStart);
 carousel.addEventListener("mousemove", dragging);
 document.addEventListener("mouseup", dragStop);
