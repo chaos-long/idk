@@ -612,7 +612,7 @@ window.addEventListener('load', ()=> {
     // Define dishes for Wednesday
     const oatmealhatochovaudau = new MonAn("Bột yến mạch với hạt óc chó và dâu", "menu_img/oatmealvoihatocchovadau.jpeg", [oatmeal, hatoccho, dau, sua, oatmealgia], "https://www.youtube.com/embed/aOfxu90TGAQ?si=eEn_XSJXmferORWW");
     const comtamsuonnuong = new MonAn("Cơm tấm sườn nướng", "menu_img/comtamsuonnuong.jpg", [comtam, suonnuong, raungon, nuocmampha, comtamgia], "https://www.youtube.com/embed/VuZoI4WRW9Q?si=LSek7N8qINFupS6K");
-    const canhcatimvabidoluoc = new MonAn("Canh cà tím và bí đỏ luộc", "menu_img/canhcatimvabidoluoc.jpg", [catim, bidogia, bidogia, bidogia, bidogia, bidogia, bidogia], "https://www.youtube.com/embed/FzoKQF6M7QU?si=s5hbNEB0SwcHtNwU");
+    const canhcatimvabidoluoc = new MonAn("Canh cà tím và bí đỏ luộc", "menu_img/canhcatimvabidoluoc.jpg", [catim, bidogia], "https://www.youtube.com/embed/FzoKQF6M7QU?si=s5hbNEB0SwcHtNwU");
 
     // Update ingredient quantities based on the given percentages
     oatmealhatochovaudau.capNhatSoLuongNguyenLieu("Bột yến mạch", Math.round((12 * Calo / 100) / 0.676));
