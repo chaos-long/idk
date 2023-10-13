@@ -2,7 +2,7 @@
 <html dir="ltr">
     <head>
         <meta charset ="utf-8">
-        <title>Health web</title>
+        <title>Nutrixcel</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <link rel="stylesheet" href="style_home.css">
@@ -19,6 +19,10 @@
             h2 {
                 text-align: center;
             }
+
+            .slider-container {
+                margin-bottom: 20px; /* Add spacing between the slider containers */
+            }
         </style>
         <nav>
            <label class="logo"><a href="index.html"><b><b style="font-size: 45px;">N</b>UTRI<b style="font-size: 45px;">X</b>CEL</b></a></label> 
@@ -32,15 +36,44 @@
                 <script> document.getElementById('fullname').value = localStorage.getItem('NAME')</script>
             </div>
         </nav>
-        <h3></h3>
+        <h3 class="textcls">Hãy chọn thực đơn mà bạn mong muốn trong 3 thực đơn đã được xây dựng</h3>
+        <h3 class="textcls">Thực đơn 1</h3>
         <!-- menu slider  -->
-        <div class="slider_body">
-        <div class="wrapper">
-            <i id="left" class="fa-solid fa-angles-left"></i>
-             <ul id = "menu" class="carousel">
-             </ul>
-             <i id="right"  class="fa-solid fa-angles-right"></i>
+        <div class="slider-container">
+            <div class="slider_body">
+                <div class="wrapper">
+                    <i id="left" class="fa-solid fa-angles-left"></i>
+                    <ul id="menu" class="carousel"></ul>
+                    <i id="right" class="fa-solid fa-angles-right"></i>
+                </div>
+            </div>
         </div>
+
+        <h3 class="textcls">Thực đơn 2</h3>
+
+        <div class="slider-container">
+            <div class="slider_body">
+                <div class="wrapper">
+                    <i id="left2" class="fa-solid fa-angles-left"></i>
+                    <ul id="menu2" class="carousel"></ul>
+                    <i id="right2" class="fa-solid fa-angles-right"></i>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="textcls">Thực đơn 3</h3>
+
+        <div class="slider-container">
+            <div class="slider_body">
+                <div class="wrapper">
+                    <i id="left3" class="fa-solid fa-angles-left"></i>
+                    <ul id="menu3" class="carousel"></ul>
+                    <i id="right3" class="fa-solid fa-angles-right"></i>
+                </div>
+            </div>
+        </div>
+
+
     </div>
     <script src="infor.js"></script>
     <script src="script2.js"></script>
