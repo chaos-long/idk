@@ -257,9 +257,9 @@ window.addEventListener('load', ()=> {
     const bohatlanh = new NguyenLieu("bơ hạt lanh", 0, "gram");
     const com = new NguyenLieu("cơm", 0, "gram");
     const thitga = new NguyenLieu("thịt gà", 0, "gram");
-    const rauxanh = new NguyenLieu("rau xanh", 0, "gram");
+    const rauxanh = new NguyenLieu("rau xanh", "tùy nhu cầu", "");
     const banhmi = new NguyenLieu("bánh mì", 0, "gram");
-    const hanhtay = new NguyenLieu("hành tây", 0, "gram");
+    const hanhtay = new NguyenLieu("hành tây", "tùy nhu cầu", "");
     const hatlanh = new NguyenLieu("hạt lanh", 0, "gram");
     const cahoi = new NguyenLieu("cá hồi", 0, "gram");
     const luamach = new NguyenLieu("lúa mạch", 0, "gram");
@@ -276,13 +276,10 @@ window.addEventListener('load', ()=> {
     banhmiluamachvoimutdauvabohatlanh.capNhatSoLuongNguyenLieu("bơ hạt lanh", Math.round((4.4 * Calo / 100) / 8.29));
     comtrangvoithitganuong.capNhatSoLuongNguyenLieu("cơm", Math.round((14.8 * Calo / 100) / 1.3));
     comtrangvoithitganuong.capNhatSoLuongNguyenLieu("thịt gà", Math.round((8.9 * Calo / 100) / 2.39));
-    comtrangvoithitganuong.capNhatSoLuongNguyenLieu("rau xanh", Math.round((5.9 * Calo / 100) / 0.3));
     banhmisandwichhapvoihanhtayvahatlanh.capNhatSoLuongNguyenLieu("bánh mì", Math.round((7.4 * Calo / 100) / 2.646));
-    banhmisandwichhapvoihanhtayvahatlanh.capNhatSoLuongNguyenLieu("hành tây", Math.round((5.6 * Calo / 100) / 0.397));
     banhmisandwichhapvoihanhtayvahatlanh.capNhatSoLuongNguyenLieu("hạt lanh", Math.round((5.6 * Calo / 100) / 5.339));
     cahoinuongvoiluamachvarauxanh.capNhatSoLuongNguyenLieu("cá hồi", Math.round((14.8 * Calo / 100) / 2.082));
     cahoinuongvoiluamachvarauxanh.capNhatSoLuongNguyenLieu("lúa mạch", Math.round((8.9 * Calo / 100) / 3.54));
-    cahoinuongvoiluamachvarauxanh.capNhatSoLuongNguyenLieu("rau xanh", Math.round((5.9 * Calo / 100) / 0.3));
 
     //bữa ăn
     const sang = new meal("7h", [banhmiluamachvoimutdauvabohatlanh]);
@@ -384,7 +381,7 @@ window.addEventListener('load', ()=> {
     const xoidauxanh = new MonAn("Xôi đậu xanh", "menu_img/xoidauxanh.jpg", [gaonep, dauxanh, giolua], "https://www.youtube.com/embed/w2CHbo08N9E?si=lgTC8W9nYqCwYwBS");
     const comthitgarang = new MonAn("cơm thịt gà rang", "menu_img/comthitgarang.jpg", [com, thitgata], "https://www.youtube.com/embed/T34SqjyEe2A?si=LsPcPbiAwkQgJQsb");
     const muopdangluoc = new MonAn("mướp đắng luộc", "menu_img/muopdangluoc.jpg", [muopdang], "https://www.youtube.com/embed/S3ChgcwtU_k?si=uKrA1ruKRQ8mP_lk");
-    const cakho = new MonAn("cá kho", "menu_img/cakho.jpg", [com, catroi], "https://www.youtube.com/embed/bjuDaFy6VkU?si=B7XK0_8Ad9urH5P2");
+    const cakho = new MonAn("cá kho", "menu_img/cakho.jpg", [catroi], "https://www.youtube.com/embed/bjuDaFy6VkU?si=B7XK0_8Ad9urH5P2");
     const mangxao = new MonAn("măng xào", "menu_img/mangxao.jpg", [mangtuoi, dauan], "https://www.youtube.com/embed/OsH8a8A2g-k?si=s2L54ncc61TEgNsx");
     const dauphuluoc = new MonAn("đậu phụ luộc", "menu_img/dauphuluoc.jpg", [dauphu], "https://www.youtube.com/embed/0sZARyRmgZM?si=-5FcxQU2N8mVpkCx");
     const quatuoi = new MonAn("thanhlong", "menu_img/thanhlong.jpg", [thanhlong]);
@@ -438,7 +435,7 @@ window.addEventListener('load', ()=> {
 
     // Update ingredient quantities based on the given percentages
     banhmiluamachhanhtayxao.capNhatSoLuongNguyenLieu("Bánh mì lúa mạch", Math.round((15 * Calo / 100) / 2.591));
-    banhmiluamachhanhtayxao.capNhatSoLuongNguyenLieu("Hành tây", Math.round((4 * Calo / 100) / 0.397));
+    banhmiluamachhanhtayxao.capNhatSoLuongNguyenLieu("Hành tây", Math.round((4 * Calo / 100) / 3.97));
 
     duahautuoi.capNhatSoLuongNguyenLieu("Dưa hấu", Math.round((9 * Calo / 100) / 0.304));
 
@@ -483,7 +480,7 @@ window.addEventListener('load', ()=> {
     const hatlanhhatbingo = new MonAn("Hạt lanh và hạt bí ngô", "menu_img/hatlanhhatbingo.jpg", [hatlanh2, hatbingo], "");
     const comthitganuongbapluoc = new MonAn("Cơm, thịt gà nướng, bắp luộc", "menu_img/comthitganuongbapluoc.jpg", [com3, thitga, bapluoc, gavii2], "https://www.youtube.com/embed/n0yFgB60iCc?si=u0I67_Om2DSG6RKQ");
     const salattraicayhatoccho = new MonAn("Salat trái cây với hạt óc chó", "menu_img/salattraicayhatoccho.jpg", [traituoitai, hatoccho3], "https://www.youtube.com/embed/ovhgTtPwweM?si=D4nNSNoZvmVIN2b-");
-    const comnangcap = new MonAn("Cơm cá hồi", "menu_img/comnangcap.jpg", [com3, cahoi2, rauxalach, gavii2], "https://www.youtube.com/embed/_IT0F8S6hz0?si=qEUK1y1iGMF1Zqe0");
+    const comnangcap = new MonAn("Cơm cá hồi", "menu_img/comcahoi.jpg", [com3, cahoi2, rauxalach, gavii2], "https://www.youtube.com/embed/_IT0F8S6hz0?si=qEUK1y1iGMF1Zqe0");
     const hamburgerchay = new MonAn("Hamburger chay", "menu_img/hamburgerchay.jpg", [hamberlualuamach, burgerchay, rausong, giavithapcalo], "https://www.youtube.com/embed/EGPO3HNxHRE?si=4b_9xnsovtuVMbQm");
 
     // Update ingredient quantities based on the given percentages
@@ -580,7 +577,7 @@ window.addEventListener('load', ()=> {
     banhMiNuongTrungTrangChaCa.capNhatSoLuongNguyenLieu("chả cá", Math.round((5 * Calo / 100) / 0.84));
 
     // Cơm gà hấp gừng
-    comGaHapGung.capNhatSoLuongNguyenLieu("cơm", Math.round((15 * Calo / 100) / 0.13));
+    comGaHapGung.capNhatSoLuongNguyenLieu("cơm", Math.round((15 * Calo / 100) / 1.3));
     comGaHapGung.capNhatSoLuongNguyenLieu("gà", Math.round((10 * Calo / 100) / 2.39));
     comGaHapGung.capNhatSoLuongNguyenLieu("gừng", Math.round((3 * Calo / 100) / 0.796));
 
@@ -622,7 +619,7 @@ window.addEventListener('load', ()=> {
 
     comtamsuonnuong.capNhatSoLuongNguyenLieu("Cơm tấm", Math.round((12 * Calo / 100) / 1.3));
     comtamsuonnuong.capNhatSoLuongNguyenLieu("Sườn nướng", Math.round((8 * Calo / 100) / 2.77)); 
-    comtamsuonnuong.capNhatSoLuongNguyenLieu("Nước mắm pha", Math.round((3 * Calo / 100) / 0.395));
+    comtamsuonnuong.capNhatSoLuongNguyenLieu("Nước mắm pha", Math.round((3 * Calo / 100) / 3.95));
 
     canhcatimvabidoluoc.capNhatSoLuongNguyenLieu("Cà tím", Math.round((5 * Calo / 100) / 0.249));
     canhcatimvabidoluoc.capNhatSoLuongNguyenLieu("Bí đỏ", Math.round((5 * Calo / 100) / 0.261));
